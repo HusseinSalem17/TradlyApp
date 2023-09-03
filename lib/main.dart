@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:tradly_app/views/onBoarding_1.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -10,6 +10,10 @@ class TradlyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OnBoarding(),
+    );
   }
 }
+
