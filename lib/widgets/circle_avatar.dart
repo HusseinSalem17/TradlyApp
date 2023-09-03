@@ -9,11 +9,11 @@ class circleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return isActive
         ? const CircleAvatar(
-            radius: 8,
+            radius: 6,
             backgroundColor: kprimaryColor,
           )
         :  CircleAvatar(
-            radius: 8,
+            radius: 6,
             backgroundColor: kprimaryColor.withOpacity(0.4),
           );
   }

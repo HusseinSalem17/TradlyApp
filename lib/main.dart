@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/views/onBoarding_1.dart';
+import 'package:tradly_app/views/onboardingviews/onBoarding_3.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -12,8 +12,7 @@ class TradlyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
+      home: OnBoarding3(),
     );
   }
 }
-
