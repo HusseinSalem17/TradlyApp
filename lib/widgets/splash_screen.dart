@@ -23,25 +23,15 @@ class SplashScreen extends StatelessWidget {
               children: [
                 Center(
                   child: SvgPicture.asset(
-                    'assets/images/Rectangle.svg',
+                    'assets/images/logo.svg',
                     fit: BoxFit.cover,
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    'T',
-                    style: TextStyle(
-                      fontSize: 90,
-                      fontWeight: FontWeight.w200,
-                      color: Color(0xff21CBAA),
-                    ),
                   ),
                 ),
               ],
             ),
           ),
-          //SvgPicture.asset('assets/images/Rectangle.svg'),
-          Center(
+          const SizedBox(height: 10),
+          const Center(
             child: Text(
               "Tradly",
               style: TextStyle(

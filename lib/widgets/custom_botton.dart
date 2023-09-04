@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 
-
 class CustomBottom extends StatelessWidget {
-  CustomBottom({super.key, this.onTap, this.isLoading = false,required this.bottomTitle});
+  const CustomBottom(
+      {super.key,
+      this.onTap,
+      this.isLoading = false,
+      required this.bottomTitle});
   final void Function()? onTap;
   final bool isLoading;
-  String bottomTitle;
+  final String bottomTitle;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +22,7 @@ class CustomBottom extends StatelessWidget {
         child: Center(
             child: isLoading
                 ? const CircularProgressIndicator(color: Colors.black45)
-                :Text(
+                : Text(
                     bottomTitle,
                     style: const TextStyle(
                         color: Colors.white,
