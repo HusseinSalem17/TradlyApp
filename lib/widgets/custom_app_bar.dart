@@ -21,6 +21,7 @@ class CustomAppBar extends StatelessWidget {
                 Text('Groceries',
                     style: TextStyle(
                         color: Colors.white,
+                        fontWeight: FontWeight.w700,
                         fontSize: 24,
                         fontFamily: 'Montserrat')),
                 Spacer(flex: 8),

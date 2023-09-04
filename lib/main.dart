@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/views/onboardingviews/home_view.dart';
+import 'package:tradly_app/views/home_view.dart';
 import 'package:tradly_app/views/onboardingviews/onBoarding_3.dart';
 import 'package:tradly_app/widgets/splash_screen.dart';
 
