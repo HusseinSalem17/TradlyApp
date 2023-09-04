@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/views/onboardingviews/home_view.dart';
 import 'package:tradly_app/views/onboardingviews/onBoarding_3.dart';
 import 'package:tradly_app/widgets/splash_screen.dart';
 
@@ -13,7 +14,7 @@ class TradlyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomeView(),
     );
   }
 }
