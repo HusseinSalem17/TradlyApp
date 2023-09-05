@@ -60,7 +60,9 @@ flutter:
     - assets/images/onboarding2.svg
     - assets/images/onboarding3.svg
     - assets/images/logo.svg
-  #   - images/a_dot_ham.jpeg
+    - assets/images/menu/
+    
+  #  - assets/images/menuImages/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

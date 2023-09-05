@@ -40,7 +40,6 @@ class CustomAppBar extends StatelessWidget {
             SearchTextField(
               hint: 'Search product',
             ),
-            //Spacer(flex: 1),
           ],
         ),
       ),

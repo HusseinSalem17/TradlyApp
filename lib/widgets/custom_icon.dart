@@ -22,7 +22,7 @@ class CustomIcon extends StatelessWidget {
             icon,
             color: color,
           ),
-          Text(title),
+          Text(title,style: TextStyle(color: color),),
         ],
       ),
     );

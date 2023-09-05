@@ -32,9 +32,9 @@ class SearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
-        prefixIcon: Icon(
+        prefixIcon: const Icon(
           FontAwesomeIcons.magnifyingGlass,
-          color: kprimaryColor,
+          color: Color(0xff13B58C),
         ),
         hintText: hint,
         hintStyle: const TextStyle(color: Colors.black38),
