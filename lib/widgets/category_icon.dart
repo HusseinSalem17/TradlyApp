@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/models/category_model.dart';
 
 class CategoryIcon extends StatelessWidget {
-  CategoryIcon({super.key, required this.name, required this.backgroundURL});
-  final String name;
-  final String backgroundURL;
+  const CategoryIcon({super.key, required this.model});
+  final CategoryModel model;
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      
-      alignment: FractionalOffset.center,
-      children: [
+    return Stack(alignment: FractionalOffset.center, children: [
       Image.asset(
-        backgroundURL,
+        model.imageURL,
       ),
-      Text(name,style: TextStyle(color: Colors.white,)),
-      
+      Text(model.category,
+          style: const TextStyle(
+            color: Colors.white,
+          )),
     ]);
   }
 }
