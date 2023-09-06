@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  get: ^4.6.5
   flutter:
     sdk: flutter
 
@@ -63,6 +64,7 @@ flutter:
     - assets/images/onboarding1.svg
     - assets/images/onboarding2.svg
     - assets/images/onboarding3.svg
+    - assets/images/Rectangle.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
