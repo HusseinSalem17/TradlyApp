@@ -14,7 +14,7 @@ class TradlyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: SplashScreen(),
     );
   }
 }

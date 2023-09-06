@@ -59,6 +59,7 @@ flutter:
     - assets/images/onboarding1.svg
     - assets/images/onboarding2.svg
     - assets/images/onboarding3.svg
+    - assets/images/logo.svg
     - assets/images/menu/
   #   - images/a_dot_ham.jpeg
 
