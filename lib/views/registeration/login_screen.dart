@@ -1,9 +1,7 @@
 //import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tradly_app/constants.dart';
-import 'package:tradly_app/views/registeration/signup_screen.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -14,7 +14,7 @@ final List<CategoryModel> categoryModel = [
     category: 'Beverage',
   ),
   CategoryModel(
-    imageURL: 'assets/images/menu/',
+    imageURL: 'assets/images/menu/bread.png',
     category: 'Bread & Bakery',
   ),
   CategoryModel(

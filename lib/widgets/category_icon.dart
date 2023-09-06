@@ -7,14 +7,17 @@ class CategoryIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(alignment: FractionalOffset.center, children: [
-      Image.asset(
-        model.imageURL,
-      ),
-      Text(model.category,
-          style: const TextStyle(
-            color: Colors.white,
-          )),
-    ]);
+    return Padding(
+      padding: const EdgeInsets.all(1.0),
+      child: Stack(alignment: FractionalOffset.center, children: [
+        Image.asset(
+          model.imageURL,
+        ),
+        Text(model.category,
+            style: const TextStyle(
+              color: Colors.white,
+            )),
+      ]),
+    );
   }
 }
