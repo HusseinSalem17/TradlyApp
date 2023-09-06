@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/category_icon.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
 import 'package:tradly_app/widgets/custom_bottom_app_bar.dart';
@@ -8,15 +9,11 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: Stack(
       children: [
+        MenuBar(),
         CustomAppBar(),
-        Positioned(
-            top: 300,
-            child: CategoryIcon(
-                name: 'Beverages',
-                backgroundURL: 'assets/images/menu/berverages.png')),
         Positioned(
             child: Align(
                 alignment: FractionalOffset.bottomCenter,
@@ -31,9 +28,17 @@ class MenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CategoryIcon(
-      name: 'Beverages',
-      backgroundURL: 'assets/images/menuImages/beverages.svg',
-    );
+    return GridView.builder(
+        itemCount: categoryModel.length,
+        scrollDirection: Axis.vertical,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          childAspectRatio: 1,
+          crossAxisSpacing: 0,
+          mainAxisSpacing: 0,
+        ),
+        itemBuilder: (context, index) {
+          return CategoryIcon(model: categoryModel[index]);
+        });
   }
 }
