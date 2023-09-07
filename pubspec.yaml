@@ -60,6 +60,7 @@ flutter:
     - assets/images/onboarding2.svg
     - assets/images/onboarding3.svg
     - assets/images/logo.svg
+    - assets/images/storeLogo.svg
     - assets/images/menu/
     - assets/images/Rectangle 54.png
   #   - images/a_dot_ham.jpeg

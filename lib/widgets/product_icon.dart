@@ -7,10 +7,10 @@ class ProductIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: 45,
+      height: 40,
+      width: 40,
       
-      child: IconButton(onPressed: onPressed, icon: Icon(icon, size: 30,color: Colors.white)),
+      child: IconButton(onPressed: onPressed, icon: Icon(icon, size: 25,color: Colors.white)),
       decoration: BoxDecoration(
           
           color: Colors.white.withOpacity(0.4),

@@ -5,18 +5,25 @@ class CustomBottom extends StatelessWidget {
   const CustomBottom(
       {super.key,
       this.onTap,
+      this.height = 55,
+      this.fontSize = 20,
+      required this.width,
       this.isLoading = false,
       required this.bottomTitle});
   final void Function()? onTap;
   final bool isLoading;
   final String bottomTitle;
+  final double height;
+  final double width;
+  final double fontSize;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 55,
+        width: width, //MediaQuery.of(context).size.width,
+        height: height, //55,
         decoration: BoxDecoration(
             color: kprimaryColor, borderRadius: BorderRadius.circular(32)),
         child: Center(
@@ -24,9 +31,9 @@ class CustomBottom extends StatelessWidget {
                 ? const CircularProgressIndicator(color: Colors.black45)
                 : Text(
                     bottomTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: fontSize,
                         fontWeight: FontWeight.w400),
                   )),
       ),

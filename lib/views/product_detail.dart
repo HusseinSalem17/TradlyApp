@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/constants.dart';
+import 'package:tradly_app/widgets/custom_botton.dart';
 import 'package:tradly_app/widgets/product_icon.dart';
 
 class ProductDetail extends StatelessWidget {
@@ -9,7 +11,7 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 240, 235, 235),
+        backgroundColor: const Color.fromARGB(255, 240, 235, 235),
         body: Column(
           children: [
             Container(
@@ -21,15 +23,21 @@ class ProductDetail extends StatelessWidget {
                 Image.asset(
                   'assets/images/Rectangle 54.png',
                   width: double.infinity,
+                  scale: 0.7,
                 ),
-                const Row(
-                  children: [
-                    ProductIcon(icon: Icons.arrow_back),
-                    Spacer(flex: 1),
-                    ProductIcon(icon: Icons.share),
-                    ProductIcon(icon: FontAwesomeIcons.heart),
-                    ProductIcon(icon: Icons.menu)
-                  ],
+                const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      ProductIcon(icon: Icons.arrow_back),
+                      Spacer(flex: 16),
+                      ProductIcon(icon: Icons.share),
+                      Spacer(flex: 1),
+                      ProductIcon(icon: FontAwesomeIcons.heart),
+                      Spacer(flex: 1),
+                      ProductIcon(icon: Icons.menu),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -58,9 +66,28 @@ class ProductDetail extends StatelessWidget {
                     ],
                   ),
                 )),
-            // Container(
-            //     Text(''),
-            //     ),
+            const SizedBox(height: 5),
+            Container(
+              height: 80,
+              color: Colors.white,
+              child: Row(
+                children: [
+                  const Spacer(flex: 1),
+                  SvgPicture.asset(
+                    'assets/images/storeLogo.svg',
+                  ),
+                  const Spacer(flex: 1),
+                  const Text('Tradly Store'),
+                  const Spacer(flex: 15),
+                  const CustomBottom(
+                      height: 25,
+                      width: 120,
+                      fontSize: 14,
+                      bottomTitle: 'Follow'),
+                  const Spacer(flex: 1),
+                ],
+              ),
+            ),
           ],
         ));
   }

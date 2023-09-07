@@ -54,6 +54,7 @@ class OnBoarding1 extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: CustomBottom(
+            width: MediaQuery.of(context).size.width,
             bottomTitle: 'Next',
           ),
         ),

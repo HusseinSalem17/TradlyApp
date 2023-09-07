@@ -21,7 +21,7 @@ class OnBoarding3 extends StatelessWidget {
             ),
             Positioned(
               left: 50,
-              top:170,
+              top: 170,
               child: SvgPicture.asset(
                 'assets/images/onboarding3.svg',
               ),
@@ -53,7 +53,8 @@ class OnBoarding3 extends StatelessWidget {
         const Spacer(flex: 1),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: CustomBottom(bottomTitle: 'Finish'),
+          child: CustomBottom(
+              width: MediaQuery.of(context).size.width, bottomTitle: 'Finish'),
         ),
         const Spacer(flex: 1),
       ],
