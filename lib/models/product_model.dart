@@ -1,6 +1,7 @@
 class ProductModel {
   ProductModel(
-      {required this.name,
+      {required this.image,
+      required this.name,
       required this.price,
       required this.store,
       required this.description,
@@ -9,6 +10,7 @@ class ProductModel {
       required this.category,
       required this.location,
       required this.deliveryDetails});
+  late String image;
   late String name;
   late String price;
   late String store;

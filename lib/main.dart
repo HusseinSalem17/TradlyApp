@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/views/home_view.dart';
-import 'package:tradly_app/views/onboardingviews/onBoarding_3.dart';
-import 'package:tradly_app/views/registeration/splash_screen.dart';
+import 'package:tradly_app/views/product_detail.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -12,9 +10,9 @@ class TradlyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: ProductDetail(),
     );
   }
 }
