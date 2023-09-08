@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
-
+import 'package:http/http.dart' as http;
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
