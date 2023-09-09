@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/constants.dart';
+import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
 import 'package:tradly_app/widgets/product_icon.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
-
+  ProductDetail({super.key, required this.model});
+  final ProductModel model;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class ProductDetail extends StatelessWidget {
               Stack(
                 children: [
                   Image.asset(
-                    'assets/images/Rectangle 54.png',
+                    model.image,
                     width: double.infinity,
                     scale: 0.7,
                   ),
@@ -46,19 +47,19 @@ class ProductDetail extends StatelessWidget {
                   height: 60,
                   width: double.infinity,
                   color: Colors.white,
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Coca Cola',
-                            style: TextStyle(
+                        Text(model.name,
+                            style: const TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700,
                                 color: Color(0xff4F4F4F))),
                         Spacer(flex: 1),
-                        Text('\$25',
+                        Text(model.price,
                             style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 15,
@@ -78,8 +79,8 @@ class ProductDetail extends StatelessWidget {
                       'assets/images/storeLogo.svg',
                     ),
                     const Spacer(flex: 1),
-                    Text('Tradly Store',
-                        style: TextStyle(
+                    Text(model.store,
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                             fontFamily: 'Montserrat')),
@@ -106,8 +107,7 @@ class ProductDetail extends StatelessWidget {
                         ),
                         Expanded(
                           child: SingleChildScrollView(
-                            child: Text(
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis cras placerat diam ipsum ut. Nisi vel adipiscing massa bibendum diam. Suspendisse mattis dui maecenas duis mattis. Mattis aliquam at arcu, semper nunc, venenatis et pellentesque eu. Id tristique maecenas tristique habitasse eu elementum sed. Aliquam eget lacus, arcu, adipiscing eget feugiat in dolor sagittis.Non commodo, a justo massa porttitor sed placerat in. Orci tristique etiam tempus sed. Mi varius morbi egestas dictum tempor nisl. In ',
+                            child: Text(model.description,
                                 style: descriptionStyle()),
                           ),
                         ),
@@ -126,12 +126,15 @@ class ProductDetail extends StatelessWidget {
                           endIndent: 80,
                         ),
                         Text(
-                          'Condition',
+                          'Condition     ' '${model.condition}',
                           style: descriptionStyle(),
                         ),
-                        Text('Price Type', style: descriptionStyle()),
-                        Text('Category', style: descriptionStyle()),
-                        Text('Location', style: descriptionStyle()),
+                        Text('Price Type     ' '${model.priceType}',
+                            style: descriptionStyle()),
+                        Text('Category     ' '${model.category}',
+                            style: descriptionStyle()),
+                        Text('Location     ' '${model.location}',
+                            style: descriptionStyle()),
                         const SizedBox(
                           height: 20,
                         )
@@ -148,8 +151,8 @@ class ProductDetail extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Additional Details',
-                          style: TextStyle(
+                          'Additional Details     ' '${model.deliveryDetails}',
+                          style: const TextStyle(
                               color: Colors.black,
                               fontSize: 22,
                               fontWeight: FontWeight.w500),
@@ -169,5 +172,5 @@ class ProductDetail extends StatelessWidget {
   }
 
   TextStyle descriptionStyle() =>
-      TextStyle(color: Colors.black54, fontSize: 16);
+      const TextStyle(color: Colors.black54, fontSize: 16);
 }

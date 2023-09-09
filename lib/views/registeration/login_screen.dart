@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onTap: () {
                     Navigator.pushNamed(context, 'SignUpScreen');
                   },
-                  child: Text(
+                  child: const Text(
                     ' Sign up',
                     style: TextStyle(
                       fontSize: 18,
