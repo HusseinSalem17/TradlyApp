@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
 import 'package:http/http.dart' as http;
+import 'package:tradly_app/widgets/registeration_custom_button.dart';
+
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
+
+  var fristNameController = TextEditingController();
+  var lastNameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var rePasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,47 +40,39 @@ class SignUpScreen extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
+              controller:fristNameController,
               hintText: 'First Name',
             ),
             const SizedBox(height: 10),
             CustomTextField(
+              controller: lastNameController,
               hintText: 'Last Name',
             ),
             const SizedBox(height: 10),
             CustomTextField(
+              controller: emailController,
               hintText: 'Email/Mobile Number',
             ),
             const SizedBox(height: 10),
             CustomTextField(
+              controller: passwordController,
               hintText: 'Password',
             ),
             const SizedBox(height: 10),
             CustomTextField(
+              controller: rePasswordController,
               hintText: 'Re-enter Password',
             ),
             const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              width: 330,
-              height: 50,
-              child: Center(
-                child: Text(
-                  'Create',
-                  style: TextStyle(
-                    color: kprimaryColor,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+            RegiserationButton(
+              onPressed: () {},
+              text: 'Create',
             ),
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Have an account? ',
                   style: TextStyle(
                     //color: Colors.white,
@@ -83,7 +83,7 @@ class SignUpScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     ' Sign in',
                     style: TextStyle(
                       //color: Colors.white,

@@ -1,11 +1,24 @@
 //import 'dart:ffi';
+//import 'dart:js';
 
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
+import 'package:tradly_app/widgets/registeration_custom_button.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+// ignore: must_be_immutable
+class LoginScreen extends StatefulWidget {
+  LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  var emailController = TextEditingController();
+
+  var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +31,6 @@ class LoginScreen extends StatelessWidget {
             const Text(
               'Welcome to tradly',
               style: TextStyle(
-                //color: Colors.white,
                 fontSize: 24,
               ),
             ),
@@ -26,41 +38,30 @@ class LoginScreen extends StatelessWidget {
             const Text(
               'Login to your account',
               style: TextStyle(
-                //color: Colors.white,
                 fontSize: 16,
               ),
             ),
             const SizedBox(height: 50),
             CustomTextField(
+              controller: emailController,
               hintText: 'Email/Mobile Number',
             ),
             const SizedBox(height: 20),
             CustomTextField(
+              controller: passwordController,
               hintText: 'Password',
             ),
             const SizedBox(height: 40),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              width: 330,
-              height: 50,
-              child: const Center(
-                child: Text(
-                  'Login',
-                  style: TextStyle(
-                    color: kprimaryColor,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+            RegiserationButton(
+              onPressed: () {
+                //login();
+              },
+              text: 'Login',
             ),
             const SizedBox(height: 50),
             const Text(
               'Forgot your password?',
               style: TextStyle(
-                //color: Colors.white,
                 fontSize: 18,
               ),
               textAlign: TextAlign.center,
@@ -69,10 +70,9 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Don\'t have an account? ',
                   style: TextStyle(
-                    //color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
@@ -83,7 +83,6 @@ class LoginScreen extends StatelessWidget {
                   child: Text(
                     ' Sign up',
                     style: TextStyle(
-                      //color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -96,4 +95,6 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+  
 }

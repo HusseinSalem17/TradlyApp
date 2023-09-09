@@ -24,7 +24,7 @@ class TradlyApp extends StatelessWidget {
       },
       initialRoute: 'LoginScreen',
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kprimaryColor),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
