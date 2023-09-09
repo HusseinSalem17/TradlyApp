@@ -1,13 +1,9 @@
-//import 'dart:ffi';
-//import 'dart:js';
-
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
 import 'package:tradly_app/widgets/registeration_custom_button.dart';
 
-// ignore: must_be_immutable
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
 
@@ -54,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             RegiserationButton(
               onPressed: () {
-                //login();
+                login();
               },
               text: 'Login',
             ),
@@ -94,5 +90,38 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> login() async {
+    // print("nada ${emailController.text}");
+    // print("nada ${passwordController.text}");
+    if (passwordController.text.isNotEmpty && emailController.text.isNotEmpty) {
+      var response =
+          await http.post(Uri.parse("https://api.tradly.app/v1/users/login"),
+              body: (
+                {
+                  //"uuid": "cea6e059-adbf-4b19-a9c7-0037886050f1",
+                  "email": emailController.text,
+                  "password": passwordController.text,
+                  "type": "customer"
+                },
+              ),
+              headers: ({
+                "Authorization": "Bearer $publishable_key",
+                "Content-Type": "application/json",
+              }));
+
+      // print("nada ${response.statusCode}");
+      if (response.statusCode == 200) {
+        context;
+      } else {
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text('Invalid credentails')));
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Black Field NOT Allowed')));
+    }
   }
 }
