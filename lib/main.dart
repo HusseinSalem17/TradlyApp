@@ -18,13 +18,13 @@ class TradlyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        'LoginScreen': (context) => LoginScreen(),
-        'SignUpScreen': (context) => SignUpScreen(),
-      },
-      initialRoute: 'LoginScreen',
+      // routes: {
+      //   'LoginScreen': (context) => LoginScreen(),
+      //   'SignUpScreen': (context) => SignUpScreen(),
+      // },
+      // initialRoute: 'LoginScreen',
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kprimaryColor),
-      home: const SplashScreen(),
+      home: ProductDetail(),
     );
   }
 }
