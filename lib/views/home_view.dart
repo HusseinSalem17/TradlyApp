@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
         //MenuBar(),
         Align(
             alignment: FractionalOffset.bottomCenter,
-            child: customBottomAppBar()),
+            child: CustomBottomAppBar()),
       ],
     ));
   }

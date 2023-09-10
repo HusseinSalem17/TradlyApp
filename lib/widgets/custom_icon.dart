@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
-  
-  CustomIcon(
-      {this.onTap,
+  const CustomIcon(
+      {super.key,
+      this.onTap,
       required this.icon,
       required this.color,
       required this.title});
@@ -22,7 +22,10 @@ class CustomIcon extends StatelessWidget {
             icon,
             color: color,
           ),
-          Text(title,style: TextStyle(color: color),),
+          Text(
+            title,
+            style: TextStyle(color: color),
+          ),
         ],
       ),
     );

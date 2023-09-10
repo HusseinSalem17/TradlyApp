@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/custom_text_field.dart';
 import 'package:http/http.dart' as http;
 import 'package:tradly_app/widgets/registeration_custom_button.dart';
+import 'package:uuid/uuid.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
@@ -21,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 100),
-            Text(
+            const Text(
               'Welcome to tradly',
               style: TextStyle(
                 //color: Colors.white,
@@ -29,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            Text(
+            const Text(
               'Signup to your account',
               style: TextStyle(
                 //color: Colors.white,
@@ -40,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
-              controller:fristNameController,
+              controller: fristNameController,
               hintText: 'First Name',
             ),
             const SizedBox(height: 10),
@@ -65,7 +68,9 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             RegiserationButton(
-              onPressed: () {},
+              onPressed: () {
+                login();
+              },
               text: 'Create',
             ),
             const SizedBox(height: 30),
@@ -98,5 +103,34 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> login() async {
+    // print("nada ${emailController.text}");
+    // print("nada ${passwordController.text}");
+    var uuid = const Uuid();
+    String id = uuid.v1();
+    var response =
+        await http.post(Uri.parse("https://api.tradly.app/v1/users/register"),
+            body: (jsonEncode({
+              "user": {
+                "uuid": id,
+                "first_name": "Hussein",
+                "last_name": "Salem",
+                "email": "husseinsalem910@gmail.com",
+                "password": "01093637794H",
+                "type": "customer"
+              }
+            })),
+            headers: (<String, String>{
+              "Authorization": "Bearer $publishable_key",
+            }));
+
+    // print("nada ${response.statusCode}");
+    if (response.statusCode == 200) {
+    } else {
+      // ignore: use_build_context_synchronously
+      print('ERRROR ${response.statusCode}');
+    }
   }
 }
