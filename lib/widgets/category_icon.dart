@@ -10,10 +10,7 @@ class CategoryIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(1.0),
       child: Expanded(
-        flex: 2,
-        child: Stack(
-          
-          alignment: FractionalOffset.center, children: [
+        child: Stack(alignment: FractionalOffset.center, children: [
           Image.asset(
             model.imageURL,
           ),

@@ -7,27 +7,18 @@ class CustomMenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CategoryIcon(model: categoryModel[0]),
-            CategoryIcon(model: categoryModel[1]),
-            CategoryIcon(model: categoryModel[2]),
-            CategoryIcon(model: categoryModel[3]),
-          ],
+    return Expanded(
+      child: GridView.builder(
+        itemCount: categoryModel.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
         ),
-        Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CategoryIcon(model: categoryModel[4]),
-            CategoryIcon(model: categoryModel[5]),
-            CategoryIcon(model: categoryModel[6]),
-            CategoryIcon(model: categoryModel[7]),
-          ],
-        ),
-      ],
+        itemBuilder: (context, index) {
+          return CategoryIcon(model: categoryModel[index]);
+        },
+      ),
     );
   }
 }

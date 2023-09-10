@@ -1,43 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
 import 'package:tradly_app/widgets/product_cart.dart';
 
 class HomeContainer extends StatelessWidget {
-  const HomeContainer({super.key});
-
+  HomeContainer(
+      {super.key, required this.title, required this.model, this.onTap});
+  final String title;
+  final ProductModel model;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 450,
-        child: const Column(
-          children: [
-            Row(
-              children: [
-                Text('New Product',
-                    style: TextStyle(
-                        color: Color(0xff4F4F4F),
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700)),
-                Spacer(flex: 1),
-                CustomBottom(
-                    height: 25,
-                    width: 120,
-                    fontSize: 14,
-                    bottomTitle: 'See All'),
-              ],
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 32),
+      child: SizedBox(
+          height: 450,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: [
+                    Text(title,
+                        style: const TextStyle(
+                            color: Color(0xff4F4F4F),
+                            fontSize: 28,
+                            fontWeight: FontWeight.w700)),
+                    const Spacer(flex: 1),
+                    CustomBottom(
+                      height: 30,
+                      width: 120,
+                      fontSize: 15,
+                      bottomTitle: 'See All',
+                      onTap: onTap,
+                    ),
+                  ],
+                ),
               ),
-            )
-          ],
-        ));
+              ListView.builder(
+                  itemCount: 1,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ProductCard(model: model);
+                  })
+            ],
+          )),
+    );
   }
 }
