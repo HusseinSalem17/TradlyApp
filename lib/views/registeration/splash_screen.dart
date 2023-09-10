@@ -13,15 +13,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-@override
-void initState() {
- Timer(const Duration(seconds: 5), (){
-Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> 
- LoginScreen()));
-});
- super.initState();
-}
+  @override
+  void initState() {
+    Timer(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

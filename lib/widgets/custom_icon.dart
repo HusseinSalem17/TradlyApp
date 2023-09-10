@@ -10,7 +10,7 @@ class CustomIcon extends StatelessWidget {
   final IconData icon;
   final Color color;
   final String title;
-
+  
   final void Function(String?)? onTap;
   @override
   Widget build(BuildContext context) {

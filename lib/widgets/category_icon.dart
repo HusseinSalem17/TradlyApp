@@ -9,15 +9,20 @@ class CategoryIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(1.0),
-      child: Stack(alignment: FractionalOffset.center, children: [
-        Image.asset(
-          model.imageURL,
-        ),
-        Text(model.category,
-            style: const TextStyle(
-              color: Colors.white,
-            )),
-      ]),
+      child: Expanded(
+        flex: 2,
+        child: Stack(
+          
+          alignment: FractionalOffset.center, children: [
+          Image.asset(
+            model.imageURL,
+          ),
+          Text(model.category,
+              style: const TextStyle(
+                color: Colors.white,
+              )),
+        ]),
+      ),
     );
   }
 }

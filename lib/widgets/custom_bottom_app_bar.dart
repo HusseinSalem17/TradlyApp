@@ -10,34 +10,40 @@ class customBottomAppBar extends StatelessWidget {
     return Container(
         color: Colors.white,
         height: 80,
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(flex: 1),
-            CustomIcon(
-                icon: FontAwesomeIcons.house,
-                color: Colors.grey,
-                title: 'Home'),
-            const Spacer(flex: 1),
-            CustomIcon(
-                icon: FontAwesomeIcons.magnifyingGlass,
-                color: Colors.grey,
-                title: 'Browse'),
-            const Spacer(flex: 1),
-            CustomIcon(
-                icon: FontAwesomeIcons.store,
-                color: Colors.grey,
-                title: 'Store'),
-            const Spacer(flex: 1),
-            CustomIcon(
-                icon: FontAwesomeIcons.listCheck,
-                color: Colors.grey,
-                title: 'Order History'),
-            const Spacer(flex: 1),
-            CustomIcon(
-                icon: Icons.person_3_sharp,
-                color: Colors.grey,
-                title: 'Profile'),
-            const Spacer(flex: 1),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Spacer(flex: 1),
+                CustomIcon(
+                    icon: FontAwesomeIcons.house,
+                    color: Colors.grey,
+                    title: 'Home'),
+                const Spacer(flex: 1),
+                CustomIcon(
+                    icon: FontAwesomeIcons.magnifyingGlass,
+                    color: Colors.grey,
+                    title: 'Browse'),
+                const Spacer(flex: 1),
+                CustomIcon(
+                    icon: FontAwesomeIcons.store,
+                    color: Colors.grey,
+                    title: 'Store'),
+                const Spacer(flex: 1),
+                CustomIcon(
+                    icon: FontAwesomeIcons.listCheck,
+                    color: Colors.grey,
+                    title: 'Order History'),
+                const Spacer(flex: 1),
+                CustomIcon(
+                    icon: Icons.person_3_sharp,
+                    color: Colors.grey,
+                    title: 'Profile'),
+                const Spacer(flex: 1),
+              ],
+            ),
           ],
         ));
   }
