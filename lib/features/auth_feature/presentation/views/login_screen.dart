@@ -65,12 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
               text: 'Login',
             ),
             const SizedBox(height: 50),
-            const Text(
-              'Forgot your password?',
-              style: TextStyle(
-                fontSize: 18,
+            GestureDetector(
+              onTap: () {},
+              child: const Text(
+                'Forgot your password?',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
             Row(
