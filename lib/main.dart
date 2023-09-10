@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/routes.dart';
-
-import 'core/onboarding_screen/views/onBoardviews.dart';
 import 'core/splash/presentation/views/splash_screen.dart';
 
 void main() {
@@ -16,11 +14,6 @@ class TradlyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // routes: {
-      //   'LoginScreen': (context) => LoginScreen(),
-      //   'SignUpScreen': (context) => SignUpScreen(),
-      // },
-      // initialRoute: 'LoginScreen',
       theme: Themes.CustomlightTheme,
       home: const SplashScreen(),
       onGenerateRoute: (settings) => generateRoute(settings),
