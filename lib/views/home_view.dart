@@ -3,7 +3,7 @@ import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
 import 'package:tradly_app/widgets/menu_bar.dart';
 import 'package:tradly_app/widgets/navigation_bar.dart';
-import 'package:tradly_app/widgets/product_home_container.dart';
+
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

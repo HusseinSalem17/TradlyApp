@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 
 class circleAvatar extends StatelessWidget {
-  const circleAvatar({super.key, this.isActive = false});
+  const circleAvatar(bool bool, {super.key, required this.isActive});
   final bool isActive;
 
   @override
