@@ -3,6 +3,7 @@ import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/views/home_view.dart';
 import 'package:tradly_app/views/onBoardviews.dart';
+import 'package:tradly_app/views/registeration/signup_screen.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -21,7 +22,7 @@ class TradlyApp extends StatelessWidget {
       // },
       // initialRoute: 'LoginScreen',
       theme: Themes.lightTheme,
-      home: const HomeView(),
+      home:  SignUpScreen(),
     );
   }
 }
