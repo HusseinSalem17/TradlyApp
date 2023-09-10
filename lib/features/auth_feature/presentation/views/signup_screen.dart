@@ -10,7 +10,8 @@ import 'package:uuid/uuid.dart';
 import 'widgets/custom_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
-  SignUpScreen({super.key});
+  static const routeName = '/signup-screen';
+  const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();

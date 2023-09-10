@@ -4,30 +4,29 @@ import 'package:tradly_app/features/home_feature/presentation/views/widgets/navi
 import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
 
+class HomeScreen extends StatelessWidget {
+  static const routeName = '/home-screen';
 
-
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffF6F9FF),
         body: Column(
-          children: [
-            const CustomAppBar(),
-            Expanded(
-              child: ListView(children: [
-                Container(height: 150),
-                const CustomMenuBar(),
-                //Expanded(child: HomeContainer(title: 'New Products',model:model)),
-              ]),
-            ),
-             const Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: CustomNavigationBar()),
-          ],
-        ));
+      children: [
+        const CustomAppBar(),
+        Expanded(
+          child: ListView(children: [
+            Container(height: 150),
+            const CustomMenuBar(),
+            //Expanded(child: HomeContainer(title: 'New Products',model:model)),
+          ]),
+        ),
+        const Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: CustomNavigationBar()),
+      ],
+    ));
   }
 }
 

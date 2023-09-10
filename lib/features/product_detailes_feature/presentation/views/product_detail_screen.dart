@@ -7,8 +7,10 @@ import 'package:tradly_app/widgets/custom_botton.dart';
 import '../../../../core/utils/colors.dart';
 import 'widgets/product_icon.dart';
 
-class ProductDetail extends StatelessWidget {
-  ProductDetail({super.key, required this.model});
+class ProductDetailsScreen extends StatelessWidget {
+  static const routeName = '/product-details-screen';
+
+  const ProductDetailsScreen({super.key, required this.model});
 
   final ProductModel model;
 

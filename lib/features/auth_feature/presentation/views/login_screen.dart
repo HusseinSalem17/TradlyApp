@@ -1,12 +1,14 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
+import 'package:tradly_app/features/auth_feature/presentation/views/signup_screen.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
 
 import 'widgets/custom_text_field.dart';
 
-
 class LoginScreen extends StatefulWidget {
+  static const routeName = '/login-screen';
+
   const LoginScreen({super.key});
 
   @override
@@ -82,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, 'SignUpScreen');
+                    Navigator.pushNamed(context, SignUpScreen.routeName);
                   },
                   child: const Text(
                     ' Sign up',

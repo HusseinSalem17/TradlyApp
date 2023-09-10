@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
+import 'package:tradly_app/routes.dart';
 
 import 'core/onboarding_screen/views/onBoardviews.dart';
-
+import 'core/splash/presentation/views/splash_screen.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -21,7 +22,8 @@ class TradlyApp extends StatelessWidget {
       // },
       // initialRoute: 'LoginScreen',
       theme: Themes.CustomlightTheme,
-      home:  OnBoardingView(),
+      home: const SplashScreen(),
+      onGenerateRoute: (settings) => generateRoute(settings),
     );
   }
 }

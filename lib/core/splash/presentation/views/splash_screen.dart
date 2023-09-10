@@ -5,9 +5,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../features/auth_feature/presentation/views/login_screen.dart';
 import '../../../utils/colors.dart';
 
-
-
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -18,9 +15,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, LoginScreen.routeName);
     });
     super.initState();
   }
