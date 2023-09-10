@@ -110,24 +110,33 @@ class SignUpScreen extends StatelessWidget {
     // print("nada ${passwordController.text}");
     var uuid = const Uuid();
     String id = uuid.v1();
+    // API endpoint
+    var url = 'https://api.tradly.app/v1/users/register/';
+    // Request body
+    var body = jsonEncode({
+      "user": {
+        "uuid": id,
+        "first_name": "Charles",
+        "last_name": "Pearson",
+        "email": "husseinsalem910@example.com",
+        "password": "01093637794",
+        "type": "customer"
+      }
+    });
+    // Headers
+    var headers = {
+      'Content-Type': 'application/json',
+      "Authorization": "Bearer $publishable_key",
+    };
+    // Send POST request
     var response =
-        await http.post(Uri.parse("https://api.tradly.app/v1/users/register"),
-            body: (jsonEncode({
-              "user": {
-                "uuid": id,
-                "first_name": "Hussein",
-                "last_name": "Salem",
-                "email": "husseinsalem910@gmail.com",
-                "password": "01093637794H",
-                "type": "customer"
-              }
-            })),
-            headers: (<String, String>{
-              "Authorization": "Bearer $publishable_key",
-            }));
+        await http.post(Uri.parse(url), body: body, headers: headers);
 
     // print("nada ${response.statusCode}");
     if (response.statusCode == 200) {
+      // Request successful
+      var responseBody = jsonDecode(response.body);
+      print(responseBody);
     } else {
       // ignore: use_build_context_synchronously
       print('ERRROR ${response.statusCode}');
