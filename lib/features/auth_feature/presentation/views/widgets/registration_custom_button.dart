@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/constants.dart';
 
-import '../core/utils/colors.dart';
+import '../../../../../core/utils/colors.dart';
 
-class RegiserationButton extends StatelessWidget {
-  const RegiserationButton({
+
+class RegistrationButton extends StatelessWidget {
+  const RegistrationButton({
     Key? key,
     required this.text,
     required this.onPressed,
@@ -17,7 +17,6 @@ class RegiserationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 330,
-      
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,

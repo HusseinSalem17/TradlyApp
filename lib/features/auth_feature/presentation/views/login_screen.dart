@@ -1,20 +1,29 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
-import 'package:tradly_app/widgets/custom_text_field.dart';
-import 'package:tradly_app/widgets/registeration_custom_button.dart';
+import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
+
+import 'widgets/custom_text_field.dart';
+
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  var emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
-  var passwordController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
               hintText: 'Password',
             ),
             const SizedBox(height: 40),
-            RegiserationButton(
+            RegistrationButton(
               onPressed: () {
                 login();
               },

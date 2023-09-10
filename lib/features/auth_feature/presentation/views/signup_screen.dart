@@ -2,19 +2,40 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
-import 'package:tradly_app/widgets/custom_text_field.dart';
+import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
+
 import 'package:http/http.dart' as http;
-import 'package:tradly_app/widgets/registeration_custom_button.dart';
 import 'package:uuid/uuid.dart';
 
-class SignUpScreen extends StatelessWidget {
+import 'widgets/custom_text_field.dart';
+
+class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
 
-  var fristNameController = TextEditingController();
-  var lastNameController = TextEditingController();
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
-  var rePasswordController = TextEditingController();
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController firstNameController = TextEditingController();
+
+  TextEditingController lastNameController = TextEditingController();
+
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  TextEditingController rePasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    rePasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +63,7 @@ class SignUpScreen extends StatelessWidget {
               height: 20,
             ),
             CustomTextField(
-              controller: fristNameController,
+              controller: firstNameController,
               hintText: 'First Name',
             ),
             const SizedBox(height: 10),
@@ -66,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
               hintText: 'Re-enter Password',
             ),
             const SizedBox(height: 20),
-            RegiserationButton(
+            RegistrationButton(
               onPressed: () {
                 login();
               },

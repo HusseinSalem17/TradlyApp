@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({this.hintText, required this.controller});
-
-  //Function(String)? onChanged;
+  CustomTextField({super.key, this.hintText, required this.controller});
 
   String? hintText;
   final TextEditingController controller;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
