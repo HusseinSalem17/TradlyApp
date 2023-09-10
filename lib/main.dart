@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/routes.dart';
 import 'core/splash/presentation/views/splash_screen.dart';
