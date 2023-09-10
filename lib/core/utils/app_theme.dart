@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class Themes {
-  static final lightTheme = ThemeData(
+  static final CustomlightTheme = ThemeData(
     scaffoldBackgroundColor: kPrimaryColor,
     // textTheme: GoogleFonts.montserratTextTheme(
     //   ThemeData.dark().textTheme,

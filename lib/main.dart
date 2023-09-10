@@ -3,7 +3,10 @@ import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/views/home_view.dart';
 import 'package:tradly_app/views/onBoardviews.dart';
-import 'package:tradly_app/views/registeration/signup_screen.dart';
+
+
+import 'core/splash/presentation/views/splash_screen.dart';
+import 'features/auth_feature/presentation/views/signup_screen.dart';
 
 void main() {
   runApp(const TradlyApp());
@@ -21,8 +24,8 @@ class TradlyApp extends StatelessWidget {
       //   'SignUpScreen': (context) => SignUpScreen(),
       // },
       // initialRoute: 'LoginScreen',
-      theme: Themes.lightTheme,
-      home:  SignUpScreen(),
+      theme: Themes.CustomlightTheme,
+      home:  SplashScreen(),
     );
   }
 }

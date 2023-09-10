@@ -1,11 +1,12 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:tradly_app/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tradly_app/views/registeration/login_screen.dart';
 
-import '../../core/utils/colors.dart';
+import '../../../../features/auth_feature/presentation/views/login_screen.dart';
+import '../../../utils/colors.dart';
+
+
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          context, MaterialPageRoute(builder: (context) => const LoginScreen()));
     });
     super.initState();
   }
