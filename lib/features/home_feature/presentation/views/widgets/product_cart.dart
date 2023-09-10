@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/models/product_model.dart';
-
-import '../core/utils/colors.dart';
+import '../../../../../core/utils/colors.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.model});

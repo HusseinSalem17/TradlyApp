@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/navigation_bar.dart';
 import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
-import 'package:tradly_app/widgets/menu_bar.dart';
-import 'package:tradly_app/widgets/navigation_bar.dart';
+
 
 
 class HomeView extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeView extends StatelessWidget {
                 //Expanded(child: HomeContainer(title: 'New Products',model:model)),
               ]),
             ),
-            const Align(
+             const Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: CustomNavigationBar()),
           ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/constants.dart';
 
 import '../core/utils/colors.dart';
 

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/widgets/category_icon.dart';
 
-import '../constants.dart';
-import '../helper/data_helper/menu_bar_data.dart';
+
+import '../../../../../helper/data_helper/menu_bar_data.dart';
+import 'category_icon.dart';
+
 
 class CustomMenuBar extends StatelessWidget {
   const CustomMenuBar({super.key});
