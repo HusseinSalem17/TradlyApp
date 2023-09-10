@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
-import 'package:tradly_app/widgets/product_icon.dart';
 
-import '../core/utils/colors.dart';
+import '../../../../core/utils/colors.dart';
+import 'widgets/product_icon.dart';
 
 class ProductDetail extends StatelessWidget {
   ProductDetail({super.key, required this.model});
+
   final ProductModel model;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
