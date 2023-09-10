@@ -4,11 +4,17 @@ import 'package:tradly_app/widgets/custom_botton.dart';
 import 'package:tradly_app/widgets/product_cart.dart';
 
 class HomeContainer extends StatelessWidget {
-  HomeContainer(
-      {super.key, required this.title, required this.model, this.onTap});
+  HomeContainer({
+    super.key,
+    required this.title,
+    required this.model,
+    this.onTap,
+  });
+
   final String title;
   final ProductModel model;
   final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
