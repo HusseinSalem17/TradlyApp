@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/constants.dart';
 
+import '../core/utils/colors.dart';
+
 class SearchTextField extends StatelessWidget {
   const SearchTextField(
       {super.key,
@@ -27,7 +29,7 @@ class SearchTextField extends StatelessWidget {
       //   } else
       //     return null;
       // },
-      cursorColor: kprimaryColor,
+      cursorColor: kPrimaryColor,
       maxLines: maxLines,
       decoration: InputDecoration(
         filled: true,
@@ -40,7 +42,7 @@ class SearchTextField extends StatelessWidget {
         hintStyle: const TextStyle(color: Colors.black38),
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(kprimaryColor),
+        focusedBorder: buildBorder(kPrimaryColor),
       ),
     );
   }

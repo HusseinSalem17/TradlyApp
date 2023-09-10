@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
+import 'package:tradly_app/core/utils/app_theme.dart';
+import 'package:tradly_app/views/home_view.dart';
 import 'package:tradly_app/views/onBoardviews.dart';
-
 
 void main() {
   runApp(const TradlyApp());
@@ -12,15 +13,15 @@ class TradlyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // routes: {
       //   'LoginScreen': (context) => LoginScreen(),
       //   'SignUpScreen': (context) => SignUpScreen(),
       // },
       // initialRoute: 'LoginScreen',
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kprimaryColor),
-      home: OnBoardingView(),
+      theme: Themes.lightTheme,
+      home: const HomeView(),
     );
   }
 }

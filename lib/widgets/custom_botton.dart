@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 
+import '../core/utils/colors.dart';
+
 class CustomBottom extends StatelessWidget {
   const CustomBottom(
       {super.key,
@@ -25,7 +27,7 @@ class CustomBottom extends StatelessWidget {
         width: width, //MediaQuery.of(context).size.width,
         height: height, //55,
         decoration: BoxDecoration(
-            color: kprimaryColor, borderRadius: BorderRadius.circular(32)),
+            color: kPrimaryColor, borderRadius: BorderRadius.circular(32)),
         child: Center(
             child: isLoading
                 ? const CircularProgressIndicator(color: Colors.black45)

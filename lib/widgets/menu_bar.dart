@@ -18,11 +18,8 @@ class CustomMenuBar extends StatelessWidget {
         mainAxisSpacing: 1,
         children: List.generate(
           8,
-          (index) => Container(
-            color: Colors.red,
-            child: CategoryIcon(
-              model: categoryModel[index],
-            ),
+          (index) => CategoryIcon(
+            model: categoryModel[index],
           ),
         ),
       ),

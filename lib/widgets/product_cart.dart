@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/models/product_model.dart';
 
+import '../core/utils/colors.dart';
+
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.model});
   final ProductModel model;
@@ -55,7 +57,7 @@ class ProductCard extends StatelessWidget {
                         fontFamily: 'Montserrat',
                         fontSize: 18,
                         fontWeight: FontWeight.w800,
-                        color: kprimaryColor)),
+                        color: kPrimaryColor)),
                 const Spacer(flex: 1),
               ],
             ),

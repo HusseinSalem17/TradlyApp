@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/constants.dart';
 
+import '../core/utils/colors.dart';
+
 class RegiserationButton extends StatelessWidget {
   const RegiserationButton({
     Key? key,
@@ -33,7 +35,7 @@ class RegiserationButton extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 16,
-            color: kprimaryColor,
+            color: kPrimaryColor,
           ),
         ),
       ),

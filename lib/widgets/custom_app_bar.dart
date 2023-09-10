@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/widgets/search_text_field.dart';
 
+import '../core/utils/colors.dart';
+
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
@@ -10,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 190,
-      color: kprimaryColor,
+      color: kPrimaryColor,
       child: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(

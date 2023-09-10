@@ -5,6 +5,8 @@ import 'package:tradly_app/models/onboard_model.dart';
 
 import 'package:tradly_app/widgets/custom_botton.dart';
 
+import '../core/utils/colors.dart';
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -79,7 +81,7 @@ class OnboardingContent extends StatelessWidget {
           children: [
             Container(
               height: 350,
-              color: kprimaryColor,
+              color: kPrimaryColor,
             ),
             Positioned(
               left: 50,
@@ -94,7 +96,7 @@ class OnboardingContent extends StatelessWidget {
         Text(
           description,
           style: const TextStyle(
-              color: kprimaryColor, fontSize: 26, fontWeight: FontWeight.w400),
+              color: kPrimaryColor, fontSize: 26, fontWeight: FontWeight.w400),
           textAlign: TextAlign.center,
         ),
         const Spacer(flex: 1),

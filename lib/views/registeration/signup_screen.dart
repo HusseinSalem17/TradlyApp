@@ -16,12 +16,11 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kprimaryColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(height: 100),
-            Text(
+            const Text(
               'Welcome to tradly',
               style: TextStyle(
                 //color: Colors.white,
@@ -29,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            Text(
+            const Text(
               'Signup to your account',
               style: TextStyle(
                 //color: Colors.white,

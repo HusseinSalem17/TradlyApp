@@ -5,6 +5,8 @@ import 'package:tradly_app/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tradly_app/views/registeration/login_screen.dart';
 
+import '../../core/utils/colors.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -25,7 +27,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kprimaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: kprimaryColor,
+                color: kPrimaryColor,
               ),
             ),
             child: Stack(

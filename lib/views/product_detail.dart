@@ -6,6 +6,8 @@ import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
 import 'package:tradly_app/widgets/product_icon.dart';
 
+import '../core/utils/colors.dart';
+
 class ProductDetail extends StatelessWidget {
   ProductDetail({super.key, required this.model});
   final ProductModel model;
@@ -18,7 +20,7 @@ class ProductDetail extends StatelessWidget {
             children: [
               Container(
                 height: 40,
-                color: kprimaryColor,
+                color: kPrimaryColor,
               ),
               Stack(
                 children: [
@@ -58,13 +60,13 @@ class ProductDetail extends StatelessWidget {
                                 fontSize: 20,
                                 fontWeight: FontWeight.w700,
                                 color: Color(0xff4F4F4F))),
-                        Spacer(flex: 1),
+                        const Spacer(flex: 1),
                         Text(model.price,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 15,
                                 fontWeight: FontWeight.w800,
-                                color: kprimaryColor)),
+                                color: kPrimaryColor)),
                       ],
                     ),
                   )),
