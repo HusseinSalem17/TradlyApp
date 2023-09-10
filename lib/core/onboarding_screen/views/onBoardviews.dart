@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tradly_app/constants.dart';
+import 'package:tradly_app/core/onboarding_screen/views/widgets/onboarding_content.dart';
 import 'package:tradly_app/models/onboard_model.dart';
-
 import 'package:tradly_app/widgets/custom_botton.dart';
 
-import '../core/utils/colors.dart';
+
+import '../../utils/colors.dart';
+
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -40,7 +41,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             child: PageView.builder(
               itemCount: onboardData.length,
               controller: _pageController,
-              itemBuilder: (context, index) => OnboardingContent(
+              itemBuilder: (context, index) => OnBoardingContent(
                 image: onboardData[index].image,
                 description: onboardData[index].description,
               ),
@@ -53,7 +54,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               bottomTitle: 'Next',
               onTap: () {
                 _pageController.nextPage(
-                    duration: Duration(microseconds: 300), curve: Curves.ease);
+                    duration: const Duration(microseconds: 300), curve: Curves.ease);
               },
             ),
           ),
@@ -66,51 +67,6 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 }
 
-class OnboardingContent extends StatelessWidget {
-  OnboardingContent(
-      {super.key, required this.image, required this.description});
-
-  final String image;
-  final String description;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Container(
-              height: 350,
-              color: kPrimaryColor,
-            ),
-            Positioned(
-              left: 50,
-              top: 170,
-              child: SvgPicture.asset(
-                image,
-              ),
-            ),
-          ],
-        ),
-        const Spacer(flex: 6),
-        Text(
-          description,
-          style: const TextStyle(
-              color: kPrimaryColor, fontSize: 26, fontWeight: FontWeight.w400),
-          textAlign: TextAlign.center,
-        ),
-        const Spacer(flex: 1),
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-
-        //   ],
-        // ),
-        const Spacer(flex: 1),
-      ],
-    );
-  }
-}
 
 final List<Onboard> onboardData = [
   Onboard(

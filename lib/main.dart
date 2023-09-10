@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
-import 'package:tradly_app/views/onBoardviews.dart';
-import 'core/splash/presentation/views/splash_screen.dart';
+
+import 'core/onboarding_screen/views/onBoardviews.dart';
 
 
 void main() {
