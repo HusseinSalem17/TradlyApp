@@ -34,7 +34,7 @@ class RegistrationButton extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 16,
-            color: kPrimaryColor,
+            color: kSecondaryColor,
           ),
         ),
       ),

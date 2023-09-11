@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tradly_app/core/onboarding_screen/views/onBoardviews.dart';
 
 import '../../../../features/auth_feature/presentation/views/login_screen.dart';
 import '../../../utils/colors.dart';
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+      Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
     });
     super.initState();
   }
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: kPrimaryColor,
+                color: kSecondaryColor,
               ),
             ),
             child: Stack(

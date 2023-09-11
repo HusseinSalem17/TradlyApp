@@ -29,7 +29,7 @@ class SearchTextField extends StatelessWidget {
       //   } else
       //     return null;
       // },
-      cursorColor: kPrimaryColor,
+      cursorColor: kSecondaryColor,
       maxLines: maxLines,
       decoration: InputDecoration(
         filled: true,
@@ -42,7 +42,7 @@ class SearchTextField extends StatelessWidget {
         hintStyle: const TextStyle(color: Colors.black38),
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(kPrimaryColor),
+        focusedBorder: buildBorder(kSecondaryColor),
       ),
     );
   }

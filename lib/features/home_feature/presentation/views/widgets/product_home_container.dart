@@ -34,7 +34,7 @@ class HomeContainer extends StatelessWidget {
                             fontSize: 28,
                             fontWeight: FontWeight.w700)),
                     const Spacer(flex: 1),
-                    CustomBottom(
+                    CustomButton(
                       height: 30,
                       width: 120,
                       fontSize: 15,

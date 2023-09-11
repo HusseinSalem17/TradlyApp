@@ -4,7 +4,7 @@ import 'colors.dart';
 
 class Themes {
   static final CustomlightTheme = ThemeData(
-    scaffoldBackgroundColor: kPrimaryColor,
+    scaffoldBackgroundColor: kSecondaryColor,
     // textTheme: GoogleFonts.montserratTextTheme(
     //   ThemeData.dark().textTheme,
     // ),

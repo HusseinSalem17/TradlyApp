@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/colors.dart';
+
 class OnBoardingContent extends StatelessWidget {
   const OnBoardingContent({
     super.key,
@@ -21,7 +22,7 @@ class OnBoardingContent extends StatelessWidget {
           children: [
             Container(
               height: 350,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             Positioned(
               left: 50,
@@ -36,16 +37,12 @@ class OnBoardingContent extends StatelessWidget {
         Text(
           description,
           style: const TextStyle(
-              color: kPrimaryColor, fontSize: 26, fontWeight: FontWeight.w400),
+            color: kSecondaryColor,
+            fontSize: 26,
+            fontWeight: FontWeight.w400,
+          ),
           textAlign: TextAlign.center,
         ),
-        const Spacer(flex: 1),
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-
-        //   ],
-        // ),
         const Spacer(flex: 1),
       ],
     );

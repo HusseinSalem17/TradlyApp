@@ -34,8 +34,8 @@ dependencies:
   font_awesome_flutter: ^10.5.0
   get: ^4.6.5
   http: ^1.1.0
-  services: ^0.0.1
   uuid: ^4.0.0
+  pin_code_fields: ^8.0.1
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:

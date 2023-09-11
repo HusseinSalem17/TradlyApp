@@ -135,10 +135,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     var body = jsonEncode({
       "user": {
         "uuid": id,
-        "first_name": "$firstNameController",
-        "last_name": "$lastNameController",
-        "email": "$emailController",
-        "password": "$passwordController",
+        "first_name": "Hussein",
+        "last_name": "Salem",
+        "email": "husseinsalem910@gmail.com",
+        "password": "01093637794",
         "type": "customer"
       }
     });

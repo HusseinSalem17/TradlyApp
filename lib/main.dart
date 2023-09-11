@@ -5,6 +5,7 @@ import 'package:tradly_app/features/auth_feature/presentation/views/send_OTP.dar
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/Verify.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
 import 'package:tradly_app/routes.dart';
+import 'core/onboarding_screen/views/onBoardviews.dart';
 import 'core/splash/presentation/views/splash_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class TradlyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Themes.CustomlightTheme,
-      home: VerifyView(),
+      home:  const SplashScreen(),
       onGenerateRoute: (settings) => generateRoute(settings),
     );
   }

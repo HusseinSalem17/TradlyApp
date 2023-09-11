@@ -54,11 +54,11 @@ class SendOPTView extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.w300)),
           ),
-          CustomBottom(
+          CustomButton(
             bottomTitle: 'Next',
             width: MediaQuery.of(context).size.width,
             color: Colors.white,
-            fontColor: kPrimaryColor,
+            fontColor: kSecondaryColor,
           ),
           const Spacer(flex: 7),
         ]),

@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../core/utils/colors.dart';
 
-class CustomBottom extends StatelessWidget {
-  const CustomBottom(
-      {super.key,
-      this.onTap,
-      this.height = 55,
-      this.fontSize = 20,
-      required this.width,
-      this.isLoading = false,
-      required this.bottomTitle,
-      this.color = kPrimaryColor,
-      this.fontColor = Colors.white});
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    super.key,
+    this.onTap,
+    this.height = 55,
+    this.fontSize = 20,
+    required this.width,
+    this.isLoading = false,
+    required this.bottomTitle,
+    this.color = kSecondaryColor,
+    this.fontColor = Colors.white,
+  });
+
   final void Function()? onTap;
   final bool isLoading;
   final String bottomTitle;
@@ -21,7 +23,6 @@ class CustomBottom extends StatelessWidget {
   final double fontSize;
   final Color color;
   final Color fontColor;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

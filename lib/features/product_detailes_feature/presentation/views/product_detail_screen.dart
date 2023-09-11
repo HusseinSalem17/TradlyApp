@@ -23,7 +23,7 @@ class ProductDetailsScreen extends StatelessWidget {
             children: [
               Container(
                 height: 40,
-                color: kPrimaryColor,
+                color: kSecondaryColor,
               ),
               Stack(
                 children: [
@@ -69,7 +69,7 @@ class ProductDetailsScreen extends StatelessWidget {
                                 fontFamily: 'Montserrat',
                                 fontSize: 15,
                                 fontWeight: FontWeight.w800,
-                                color: kPrimaryColor)),
+                                color: kSecondaryColor)),
                       ],
                     ),
                   )),
@@ -90,7 +90,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             fontSize: 18,
                             fontFamily: 'Montserrat')),
                     const Spacer(flex: 15),
-                    const CustomBottom(
+                    const CustomButton(
                         height: 25,
                         width: 120,
                         fontSize: 14,
@@ -119,7 +119,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        CustomBottom(
+                        CustomButton(
                           bottomTitle: 'Add To Cart',
                           width: MediaQuery.of(context).size.width,
                         ),

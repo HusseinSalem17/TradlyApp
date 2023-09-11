@@ -11,7 +11,7 @@ class DoIndicator extends StatelessWidget {
       height: 12,
       width: 12,
       decoration: BoxDecoration(
-          color: isActive ? kPrimaryColor : kPrimaryColor.withOpacity(0.5),
+          color: isActive ? kSecondaryColor : kSecondaryColor.withOpacity(0.5),
           borderRadius: const BorderRadius.all(Radius.circular(12))),
     );
   }

@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                         fontFamily: 'Montserrat',
                         fontSize: 18,
                         fontWeight: FontWeight.w800,
-                        color: kPrimaryColor)),
+                        color: kSecondaryColor)),
                 const Spacer(flex: 1),
               ],
             ),
