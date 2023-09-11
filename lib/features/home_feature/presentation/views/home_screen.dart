@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/navigation_bar.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_home_container.dart';
 import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
 
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: Column(
       children: [
         const CustomAppBar(),
@@ -19,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           child: ListView(children: [
             Container(height: 150),
             const CustomMenuBar(),
-            //Expanded(child: HomeContainer(title: 'New Products',model:model)),
+            HomeContainer(title: 'New Products',model:model),
           ]),
         ),
         const Align(
