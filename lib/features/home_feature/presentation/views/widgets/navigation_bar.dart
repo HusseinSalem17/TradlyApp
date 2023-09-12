@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tradly_app/features/Profile/profle.dart';
 
 import 'custom_icon.dart';
 
@@ -39,9 +40,13 @@ class CustomNavigationBar extends StatelessWidget {
                     title: 'Order History'),
                 const Spacer(flex: 1),
                 CustomIcon(
-                    icon: Icons.person_3_sharp,
-                    color: Colors.grey,
-                    title: 'Profile'),
+                  icon: Icons.person_3_sharp,
+                  color: Colors.grey,
+                  title: 'Profile',
+                  onTap: () {
+                    Navigator.pushNamed(context, UserProfile.routeName);
+                  },
+                ),
                 const Spacer(flex: 1),
               ],
             ),

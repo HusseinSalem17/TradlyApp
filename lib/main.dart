@@ -20,7 +20,7 @@ class TradlyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Themes.CustomlightTheme,
-      home:  const SplashScreen(),
+      home:  HomeScreen(),
       onGenerateRoute: (settings) => generateRoute(settings),
     );
   }

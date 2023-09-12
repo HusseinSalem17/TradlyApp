@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:tradly_app/core/utils/colors.dart';
-import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
 
 class VerifyView extends StatefulWidget {
