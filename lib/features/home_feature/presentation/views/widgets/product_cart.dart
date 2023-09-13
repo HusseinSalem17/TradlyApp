@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tradly_app/models/product_model.dart';
+import 'package:tradly_app/core/models/product_model.dart';
 import '../../../../../core/utils/colors.dart';
 
 class ProductCard extends StatelessWidget {
@@ -48,12 +48,15 @@ class ProductCard extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         color: Colors.black45)),
                 const Spacer(flex: 5),
-                Text('\$ ${model.price}',
-                    style: const TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 18,
-                        fontWeight: FontWeight.w800,
-                        color: kSecondaryColor)),
+                Text(
+                  '\$ ${model.price}',
+                  style: const TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: AssetsColors.kSecondaryColor,
+                  ),
+                ),
                 const Spacer(flex: 1),
               ],
             ),

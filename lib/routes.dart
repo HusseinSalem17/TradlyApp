@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/onboarding_screen/views/onBoardviews.dart';
-import 'package:tradly_app/features/Profile/profle.dart';
+import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
+import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
+
 import 'features/auth_feature/presentation/views/login_screen.dart';
 import 'features/auth_feature/presentation/views/signup_screen.dart';
 
@@ -18,9 +20,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const OnBoardingView(),
       );
-    case UserProfile.routeName:
+    case VerifyView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const UserProfile(),
+        builder: (context) => const VerifyView(),
+      );
+    case HomeScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
       );
 
     /// the productDetailScreen not have a logic yet now !!!!

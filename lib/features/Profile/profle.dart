@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/features/Profile/widgets/profile_menu.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -9,7 +10,7 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: AssetsColors.kPrimaryColor,
       appBar: AppBar(
         title: const Text('Profile',
             style: TextStyle(
@@ -19,7 +20,7 @@ class UserProfile extends StatelessWidget {
                 fontFamily: 'Montserrat')),
         elevation: 0,
         automaticallyImplyLeading: false,
-        backgroundColor: kSecondaryColor,
+        backgroundColor: AssetsColors.kSecondaryColor,
         actions: [
           IconButton(
             onPressed: () {},
@@ -41,18 +42,18 @@ class UserProfile extends StatelessWidget {
         children: [
           const Align(child: Positioned(child: ProfileMenu())),
           Container(
-            color: kSecondaryColor,
+            color: AssetsColors.kSecondaryColor,
             height: MediaQuery.of(context).size.height / 3,
             child: Column(
               children: [
                 Row(
                   children: [
-                    Spacer(flex: 1),
+                    const Spacer(flex: 1),
                     SvgPicture.asset(
                       'assets/images/store_logo.svg',
                     ),
-                    Spacer(flex: 1),
-                    Column(
+                    const Spacer(flex: 1),
+                    const Column(
                       children: [
                         Text('Tradly team',
                             style: TextStyle(
@@ -60,14 +61,13 @@ class UserProfile extends StatelessWidget {
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400)),
                         Text('+19998887776\ninfo@tradly.com',
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300)),
-                                
                       ],
                     ),
-                    Spacer(flex:10),
+                    const Spacer(flex: 10),
                   ],
                 ),
               ],
@@ -79,103 +79,3 @@ class UserProfile extends StatelessWidget {
   }
 }
 
-class ProfileMenu extends StatelessWidget {
-  const ProfileMenu({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      width: 300,
-      height: 300,
-      //decoration: BoxDecoration(),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        TextButton(
-          onPressed: () {},
-          child: const Text('Edit Profile',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-        const Divider(
-          color: kPrimaryColor,
-          height: 0,
-          thickness: 1,
-          indent: 10,
-          endIndent: 10,
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('Language & Currency',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-        const Divider(
-          color: kPrimaryColor,
-          height: 0,
-          thickness: 1,
-          indent: 10,
-          endIndent: 10,
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('Feedback',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-        const Divider(
-          color: kPrimaryColor,
-          height: 0,
-          thickness: 1,
-          indent: 10,
-          endIndent: 10,
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('Refer a Friend',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-        const Divider(
-          color: kPrimaryColor,
-          height: 0,
-          thickness: 1,
-          indent: 10,
-          endIndent: 10,
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('Terms & Conditions',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-        const Divider(
-          color: kPrimaryColor,
-          height: 0,
-          thickness: 1,
-          indent: 10,
-          endIndent: 10,
-        ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('Logout',
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400)),
-        ),
-      ]),
-    );
-  }
-}

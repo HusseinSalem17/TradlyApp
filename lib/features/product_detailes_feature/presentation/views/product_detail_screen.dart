@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tradly_app/models/product_model.dart';
-import 'package:tradly_app/widgets/custom_botton.dart';
+import 'package:tradly_app/core/models/product_model.dart';
+import 'package:tradly_app/core/widgets/custom_botton.dart';
 
 import '../../../../core/utils/colors.dart';
 import 'widgets/product_icon.dart';
@@ -23,7 +23,7 @@ class ProductDetailsScreen extends StatelessWidget {
             children: [
               Container(
                 height: 40,
-                color: kSecondaryColor,
+                color: AssetsColors.kSecondaryColor,
               ),
               Stack(
                 children: [
@@ -69,7 +69,7 @@ class ProductDetailsScreen extends StatelessWidget {
                                 fontFamily: 'Montserrat',
                                 fontSize: 15,
                                 fontWeight: FontWeight.w800,
-                                color: kSecondaryColor)),
+                                color: AssetsColors.kSecondaryColor)),
                       ],
                     ),
                   )),

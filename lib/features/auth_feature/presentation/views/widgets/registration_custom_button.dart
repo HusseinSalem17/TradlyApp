@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 
-
 class RegistrationButton extends StatelessWidget {
   const RegistrationButton({
     Key? key,
@@ -34,7 +33,7 @@ class RegistrationButton extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 16,
-            color: kSecondaryColor,
+            color: AssetsColors.kSecondaryColor,
           ),
         ),
       ),

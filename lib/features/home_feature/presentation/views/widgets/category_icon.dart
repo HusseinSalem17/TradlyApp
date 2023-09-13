@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/models/category_model.dart';
+import 'package:tradly_app/core/models/category_model.dart';
 
 class CategoryIcon extends StatelessWidget {
   const CategoryIcon({super.key, required this.model});

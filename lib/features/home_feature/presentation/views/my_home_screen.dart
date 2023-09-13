@@ -6,7 +6,8 @@ import 'package:tradly_app/features/Profile/profle.dart';
 import 'package:tradly_app/features/Store_feature/store_view.dart';
 import 'package:tradly_app/features/browse_feature/browse_view.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/home_view.dart';
-import 'package:tradly_app/models/product_model.dart';
+
+import '../../../../core/models/product_model.dart';
 
 class MyHomePage extends StatefulWidget {
   static const routeName = '/home-screen';
@@ -20,11 +21,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    HomeView(),
-    BrowseView(),
-    StoreView(),
-    OrderHistory(),
-    UserProfile(),
+    const HomeView(),
+    const BrowseView(),
+    const StoreView(),
+    const OrderHistory(),
+    const UserProfile(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: _currentIndex, // Highlight the current item
         onTap: _onItemTapped, // Handle the selection
-        fixedColor: kSecondaryColor,
+        fixedColor: AssetsColors.kSecondaryColor,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
 

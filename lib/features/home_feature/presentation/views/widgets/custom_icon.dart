@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
-  CustomIcon(
-      {this.onTap,
+  const CustomIcon(
+      {super.key,
+      this.onTap,
       required this.icon,
       required this.color,
       required this.title});

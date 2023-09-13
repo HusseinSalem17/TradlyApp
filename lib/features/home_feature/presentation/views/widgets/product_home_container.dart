@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_cart.dart';
+<<<<<<< HEAD
 import 'package:tradly_app/models/product_model.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
+=======
+import 'package:tradly_app/core/models/product_model.dart';
+import 'package:tradly_app/core/widgets/custom_botton.dart';
+>>>>>>> 65f00673fd7e784b9b7e91a68886d27b07f3f7ef
 
 class HomeContainer extends StatelessWidget {
-  HomeContainer({
+  const HomeContainer({
     super.key,
     required this.title,
     required this.model,

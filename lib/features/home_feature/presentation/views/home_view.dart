@@ -4,9 +4,13 @@ import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/my_home_screen.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_home_container.dart';
+<<<<<<< HEAD
 import 'package:tradly_app/models/store_model.dart';
 import 'package:tradly_app/widgets/custom_app_bar.dart';
 import 'package:tradly_app/widgets/custom_botton.dart';
+=======
+import '../../../../core/widgets/custom_app_bar.dart';
+>>>>>>> 65f00673fd7e784b9b7e91a68886d27b07f3f7ef
 
 class HomeView extends StatelessWidget {
   const HomeView({
