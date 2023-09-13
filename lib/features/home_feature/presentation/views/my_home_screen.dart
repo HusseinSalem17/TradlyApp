@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Order_history_feature/order_history_view.dart';
 import 'package:tradly_app/features/Profile/profle.dart';
-import 'package:tradly_app/features/Store_feature/store_view.dart';
 import 'package:tradly_app/features/browse_feature/browse_view.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/home_view.dart';
 
 import '../../../../core/models/product_model.dart';
+import '../../../store_feature/presentation/views/store_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   static const routeName = '/home-screen';
@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _pages = [
     const HomeView(),
     const BrowseView(),
-    const StoreView(),
+    const StoreScreen(),
     const OrderHistory(),
     const UserProfile(),
   ];

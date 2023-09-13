@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/core/widgets/search_text_field.dart';
 
 import '../utils/colors.dart';

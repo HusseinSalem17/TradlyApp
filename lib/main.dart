@@ -8,7 +8,6 @@ import 'package:tradly_app/core/utils/functions/service_locator.dart';
 import 'package:tradly_app/features/auth_feature/data/repos/auth_repo_impl.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/register_cubit/register_cubit.dart';
 import 'package:tradly_app/routes.dart';
-import 'features/onboarding_screen/presentation/views/splash_screen.dart';
 
 void main() {
   setupServiceLocator();
@@ -32,8 +31,7 @@ class TradlyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: Themes.customlightTheme,
-        home: const SplashScreen(),
+        theme: Themes.customLightTheme,
         onGenerateRoute: (settings) => generateRoute(settings),
       ),
     );

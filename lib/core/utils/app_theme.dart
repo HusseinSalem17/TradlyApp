@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class Themes {
-  static final customlightTheme = ThemeData(
-    scaffoldBackgroundColor: AssetsColors.kSecondaryColor,
+  static final customLightTheme = ThemeData(
+    scaffoldBackgroundColor: AssetsColors.kPrimaryColor,
   );
 }
