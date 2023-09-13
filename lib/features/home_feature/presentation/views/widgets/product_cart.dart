@@ -18,7 +18,7 @@ class ProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               model.image,
@@ -26,14 +26,12 @@ class ProductCard extends StatelessWidget {
             const Spacer(
               flex: 1,
             ),
-            Align(
-              alignment: const Alignment(-0.8, 0),
-              child: Text(model.name,
-                  style: const TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 20,
-                      color: Colors.black)),
-            ),
+            Text(model.name,
+            textAlign: TextAlign.start,
+                style: const TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 20,
+                    color: Colors.black)),
             const Spacer(
               flex: 1,
             ),

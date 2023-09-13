@@ -10,14 +10,14 @@ class ProductModel {
       required this.category,
       required this.location,
       required this.deliveryDetails});
-  late String image;
-  late String name;
-  late String price;
-  late String store;
-  late String description;
-  late String condition;
-  late String priceType;
-  late String category;
-  late String location;
-  late String deliveryDetails;
+  late String image,
+      name,
+      price,
+      store,
+      description,
+      condition,
+      priceType,
+      category,
+      location,
+      deliveryDetails;
 }
