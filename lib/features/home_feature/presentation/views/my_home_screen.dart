@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: AssetsColors.kPrimaryColor,
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -76,8 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
         fixedColor: AssetsColors.kSecondaryColor,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
-
-        
       ),
     );
   }

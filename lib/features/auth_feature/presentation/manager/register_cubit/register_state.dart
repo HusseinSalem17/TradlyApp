@@ -18,7 +18,7 @@ final class RegisterFailure extends RegisterState {
 }
 
 final class RegisterSuccess extends RegisterState {
-  final ResponseRequest response;
+  final ResponseRegister response;
 
   const RegisterSuccess(this.response);
 }

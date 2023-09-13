@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tradly_app/core/models/store_model.dart';
 import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/core/widgets/custom_botton.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/my_home_screen.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_home_container.dart';
-<<<<<<< HEAD
-import 'package:tradly_app/models/store_model.dart';
-import 'package:tradly_app/widgets/custom_app_bar.dart';
-import 'package:tradly_app/widgets/custom_botton.dart';
-=======
+
 import '../../../../core/widgets/custom_app_bar.dart';
->>>>>>> 65f00673fd7e784b9b7e91a68886d27b07f3f7ef
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -45,8 +42,8 @@ class StoreMenu extends StatelessWidget {
       children: [
         Container(
           height: 200,
-          color: kSecondaryColor,
-          child: const Padding(
+          color: AssetsColors.kSecondaryColor,
+          child:  const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             child: Align(
               alignment: Alignment.topCenter,
@@ -62,7 +59,7 @@ class StoreMenu extends StatelessWidget {
                     height: 30,
                     width: 120,
                     fontSize: 15,
-                    fontColor: kSecondaryColor,
+                    fontColor: AssetsColors.kSecondaryColor,
                     bottomTitle: 'View all',
                     color: Colors.white,
                     //onTap: onTap,
@@ -72,7 +69,7 @@ class StoreMenu extends StatelessWidget {
             ),
           ),
         ),
-        StoreCard()
+        const StoreCard()
       ],
     );
   }

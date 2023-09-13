@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/auth.dart';
-import 'package:tradly_app/features/auth_feature/data/models/response/response.dart';
+import 'package:tradly_app/features/auth_feature/data/models/response/response_register/response_register.dart';
 import 'package:tradly_app/features/auth_feature/data/repos/auth_repo.dart';
 
 part 'register_state.dart';

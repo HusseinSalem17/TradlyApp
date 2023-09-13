@@ -1,13 +1,12 @@
 import 'data.dart';
 
-class ResponseRequest {
+class ResponseLogin {
   bool? status;
   Data? data;
 
-  ResponseRequest({this.status, this.data});
+  ResponseLogin({this.status, this.data});
 
-  factory ResponseRequest.fromJson(Map<String, dynamic> json) =>
-      ResponseRequest(
+  factory ResponseLogin.fromJson(Map<String, dynamic> json) => ResponseLogin(
         status: json['status'] as bool?,
         data: json['data'] == null
             ? null
