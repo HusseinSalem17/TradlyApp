@@ -1,6 +1,6 @@
 class StoreModel {
   final String name,
-  image,
+      image,
       webAddress,
       description,
       type,

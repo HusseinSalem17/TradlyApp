@@ -5,6 +5,7 @@ import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/core/errors/failures.dart';
 import 'package:tradly_app/core/utils/functions/api_service.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/auth.dart';
+import 'package:tradly_app/features/auth_feature/data/models/request_verify/request_verify.dart';
 
 import '../models/response/response_login/response_login.dart';
 import '../models/response/response_register/response_register.dart';
@@ -73,10 +74,34 @@ class AuthRepoImpl implements AuthRepo {
       );
     }
   }
-  
+
   @override
-  Future<Either<Failure, ResponseLogin>> verifyOTP({required Auth data}) {
-    // TODO: implement verifyOTP
-    throw UnimplementedError();
+  Future<Either<Failure, ResponseLogin>> verifyOTP(
+      {required RequestVerify data}) async{
+        try {
+      var response = ResponseLogin.fromJson(
+        await apiService.post(
+          endPoint: 'v1/users/verify',
+          data: data.toJson(),
+          headers: {
+            "Authorization": publishable_key,
+            "Content-Type": "application/json",
+          },
+        ),
+      );
+      return right(response);
+    } catch (e) {
+      //if i had status code not 200 right (throw dio error)
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
   }
 }

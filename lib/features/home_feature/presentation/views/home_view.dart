@@ -43,7 +43,7 @@ class StoreMenu extends StatelessWidget {
         Container(
           height: 200,
           color: AssetsColors.kSecondaryColor,
-          child:  const Padding(
+          child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             child: Align(
               alignment: Alignment.topCenter,

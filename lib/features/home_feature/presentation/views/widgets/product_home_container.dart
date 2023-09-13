@@ -28,9 +28,9 @@ class HomeContainer extends StatelessWidget {
               children: [
                 Text(title,
                     style: const TextStyle(
-                    color: Colors.black54,
-                    fontSize: 26,
-                    fontWeight: FontWeight.w700)),
+                        color: Colors.black54,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700)),
                 const Spacer(flex: 1),
                 CustomButton(
                   height: 30,

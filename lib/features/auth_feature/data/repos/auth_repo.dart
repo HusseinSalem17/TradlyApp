@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:tradly_app/core/errors/failures.dart';
+import 'package:tradly_app/features/auth_feature/data/models/request_verify/request_verify.dart';
 
 import '../models/auth/auth.dart';
 import '../models/response/response_login/response_login.dart';
@@ -15,6 +16,6 @@ abstract class AuthRepo {
   });
 
   Future<Either<Failure, ResponseLogin>> verifyOTP({
-    required Auth data,
+    required RequestVerify data,
   });
 }

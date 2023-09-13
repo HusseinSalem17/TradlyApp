@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
               flex: 1,
             ),
             Text(model.name,
-            textAlign: TextAlign.start,
+                textAlign: TextAlign.start,
                 style: const TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 20,
