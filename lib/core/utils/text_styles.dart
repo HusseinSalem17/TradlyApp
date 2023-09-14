@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const kMontserrat = 'Montserrat';
 
 abstract class Styles {
-  static const textStyleNoraml14 = TextStyle(
+  static const textStyleNormal14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
     fontFamily: kMontserrat,
