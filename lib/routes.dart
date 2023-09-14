@@ -37,8 +37,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
 //----- Verify Routing -----
     case VerifyView.routeName:
+      final int verifyId = settings.arguments as int;
       return MaterialPageRoute(
-        builder: (context) => const VerifyView(),
+        builder: (context) => VerifyView(verifyId: verifyId),
       );
 
 //----- Home Routing -----

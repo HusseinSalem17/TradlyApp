@@ -1,13 +1,10 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
 
-import 'package:http/http.dart' as http;
 
 import 'package:uuid/uuid.dart';
 
@@ -51,8 +48,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
-          if (state is RegisterLoading) {
-            Navigator.pushReplacementNamed(context, VerifyView.routeName);
+          if (state is RegisterSuccess) {
+            Navigator.pushReplacementNamed(context, VerifyView.routeName,arguments:state.response.data!.verifyId);
           }
         },
         builder: (context, state) {
@@ -162,39 +159,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  // Future<void> login() async {
-  //   var uuid = const Uuid();
-  //   String id = uuid.v1();
-  //   // API endpoint
-  //   var url = 'https://api.tradly.app/v1/users/register/';
-  //   // Request body
-  //   var body = jsonEncode({
-  //     "user": {
-  //       "uuid": id,
-  //       "first_name": "Hussein",
-  //       "last_name": "Salem",
-  //       "email": "husseinsalem910@gmail.com",
-  //       "password": "01093637794",
-  //       "type": "customer"
-  //     }
-  //   });
-  //   // Headers
-  //   var headers = {
-  //     'Content-Type': 'application/json',
-  //     "Authorization": "Bearer $publishable_key",
-  //   };
-  //   // Send POST request
-  //   var response =
-  //       await http.post(Uri.parse(url), body: body, headers: headers);
-
-  //   // print("nada ${response.statusCode}");
-  //   if (response.statusCode == 200) {
-  //     // Request successful
-  //     var responseBody = jsonDecode(response.body);
-  //     print(responseBody);
-  //   } else {
-  //     // ignore: use_build_context_synchronously
-  //     print('ERRROR ${response.statusCode}');
-  //   }
-  // }
-}
+  }
