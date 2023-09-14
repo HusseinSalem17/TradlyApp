@@ -6,6 +6,6 @@ abstract class AssetsColors {
   static const selectedColor = Color(0xff0b463a);
   static const kPrimaryTextColor = Color(0xff4F4F4F);
   static const priceColor = Color(0xff33907C);
-  static const white = Colors.white;
+  static const white = Color(0xffFFFFFF);
   static const black = Colors.black;
 }

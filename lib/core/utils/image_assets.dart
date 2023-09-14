@@ -8,6 +8,7 @@ abstract class AssetsImages {
   static const rectangle = 'assets/images/rectangle.svg';
   static const cocaImg = 'assets/images/coca_img.png';
   static const coca = 'assets/images/coca.png';
+  static const storeScreenLogo = 'assets/images/store_logo_.svg';
 
   //Menu Images
   static const berverages = 'assets/images/menu/berverages.png';
