@@ -32,8 +32,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         builder: (context) => const OnBoardingView(),
       );
     case VerifyView.routeName:
+      final int verifyId = settings.arguments as int;
       return MaterialPageRoute(
-        builder: (context) => const VerifyView(),
+        builder: (context) => VerifyView(verifyId: verifyId),
       );
     case HomeScreen.routeName:
       return MaterialPageRoute(

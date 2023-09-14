@@ -1,14 +1,22 @@
 //import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
+import 'package:tradly_app/features/auth_feature/data/models/request_verify/request_verify.dart';
+import 'package:tradly_app/features/auth_feature/presentation/manager/verify_cubit/verify_cubit.dart';
+import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_pin_code.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
+
+import '../../../../core/widgets/custom_error_widget.dart';
+import '../../../../core/widgets/custom_loading_indicator.dart';
 
 class VerifyView extends StatefulWidget {
   static const routeName = '/OTP-screen';
 
-  const VerifyView({super.key});
+  const VerifyView({super.key, required this.verifyId});
 
+  final int verifyId;
   @override
   State<VerifyView> createState() => _VerifyViewState();
 }
@@ -31,97 +39,95 @@ class _VerifyViewState extends State<VerifyView> {
           backgroundColor: AssetsColors.kSecondaryColor,
           elevation: 0,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Spacer(flex: 2),
-              const Text(
-                'Phone Verification',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                ),
-              ),
-              const Text(
-                'Enter your OTP code here',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                  fontSize: 16,
-                ),
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              buildPinCodeTextField(context),
-              const Spacer(
-                flex: 1,
-              ),
-              const Text(
-                'Didn’t you received any code? ',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: const Text('Resent new code',
-                    style: TextStyle(
+        body: BlocConsumer<VerifyCubit, VerifyState>(
+          listener: (context, state) {
+            if (state is VerifySuccess) {
+              Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+            }
+          },
+          builder: (context, state) {
+            if (state is VerifyLoading) {
+              return const CustomLoadingIndicator();
+            } else if (state is VerifyFailure) {
+              return CustomErrorWidget(
+                errMessage: state.errMessage,
+              );
+            } else {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Spacer(flex: 2),
+                    const Text(
+                      'Phone Verification',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                      ),
+                    ),
+                    const Text(
+                      'Enter your OTP code here',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const Spacer(
+                      flex: 1,
+                    ),
+                    CustomPinCodeTextField(
+                      context: context,
+                      otpFiledController: otpFiledController,
+                    ),
+                    const Spacer(
+                      flex: 1,
+                    ),
+                    const Text(
+                      'Didn’t you received any code? ',
+                      style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
-                        fontWeight: FontWeight.w300)),
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              CustomButton(
-                bottomTitle: 'Verify',
-                width: MediaQuery.of(context).size.width,
-                color: Colors.white,
-                fontColor: AssetsColors.kSecondaryColor,
-                onTap: () {
-                  print(otpFiledController.text);
-                },
-              ),
-              const Spacer(
-                flex: 3,
-              ),
-            ],
-          ),
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text('Resent new code',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300)),
+                    ),
+                    const Spacer(
+                      flex: 1,
+                    ),
+                    CustomButton(
+                      bottomTitle: 'Verify',
+                      width: MediaQuery.of(context).size.width,
+                      color: Colors.white,
+                      fontColor: AssetsColors.kSecondaryColor,
+                      onTap: () {
+                        RequestVerify data = RequestVerify(
+                          verifyId: widget.verifyId,
+                          code: int.parse(
+                            otpFiledController.text.trim(),
+                          ),
+                        );
+                        BlocProvider.of<VerifyCubit>(context)
+                            .verify(data: data);
+                      },
+                    ),
+                    const Spacer(
+                      flex: 3,
+                    ),
+                  ],
+                ),
+              );
+            }
+          },
         ),
-      ),
-    );
-  }
-
-  PinCodeTextField buildPinCodeTextField(BuildContext context) {
-    return PinCodeTextField(
-      cursorColor: Colors.white,
-      animationCurve: Curves.bounceIn,
-      animationType: AnimationType.scale,
-      appContext: context,
-      length: 6,
-      controller: otpFiledController,
-      keyboardType: TextInputType.number,
-      textStyle: const TextStyle(
-        color: Colors.white,
-      ),
-      onCompleted: (result) {
-        print(result);
-      },
-      pinTheme: PinTheme(
-        borderRadius: BorderRadius.circular(5),
-        selectedColor: AssetsColors.selectedColor,
-        shape: PinCodeFieldShape.underline,
-        fieldHeight: 50,
-        fieldWidth: 40,
-        borderWidth: 1,
-        activeColor: Colors.white,
-        inactiveColor: Colors.white,
-        inactiveBorderWidth: 2,
       ),
     );
   }
