@@ -1,34 +1,84 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/navigation_bar.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_home_container.dart';
-import 'package:tradly_app/core/models/product_model.dart';
-import 'package:tradly_app/core/widgets/custom_app_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/features/Order_history_feature/order_history_view.dart';
+import 'package:tradly_app/features/Profile/profle.dart';
+import 'package:tradly_app/features/browse_feature/browse_view.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/home_body.dart';
 
-class HomeScreen extends StatelessWidget {
+
+import '../../../../core/models/product_model.dart';
+import '../../../store_feature/presentation/views/store_screen.dart';
+
+class MyHomePage extends StatefulWidget {
   static const routeName = '/home-screen';
 
-  const HomeScreen({super.key});
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _currentIndex = 0;
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    const BrowseView(),
+    const StoreScreen(),
+    const OrderHistory(),
+    const UserProfile(),
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            const CustomAppBar(),
-            Expanded(
-              child: ListView(children: [
-                Container(height: 150),
-                const CustomMenuBar(),
-                HomeContainer(title: 'New Products', model: model),
-              ]),
+      backgroundColor: AssetsColors.kPrimaryColor,
+      body: _pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              FontAwesomeIcons.house,
             ),
-            const Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: CustomNavigationBar()),
-          ],
-        ));
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+            ),
+            label: 'Browse',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FontAwesomeIcons.store,
+            ),
+            label: 'Store',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FontAwesomeIcons.listCheck,
+            ),
+            label: 'Order History',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_3_sharp,
+            ),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _currentIndex, // Highlight the current item
+        onTap: _onItemTapped, // Handle the selection
+        fixedColor: AssetsColors.kSecondaryColor,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+      ),
+    );
   }
 }
 

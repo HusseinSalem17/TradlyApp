@@ -9,17 +9,19 @@ class CategoryIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.passthrough,
+      fit: StackFit.expand,
       children: [
         Image.asset(
           model.imageURL,
-          fit: BoxFit.cover,
+          fit: BoxFit.contain,
         ),
         Center(
-          child: Text(model.category,
-              style: const TextStyle(
-                color: Colors.white,
-              )),
+          child: Text(
+            model.category,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
       ],
     );

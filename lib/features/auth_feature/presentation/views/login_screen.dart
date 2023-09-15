@@ -7,7 +7,7 @@ import 'package:tradly_app/features/auth_feature/presentation/views/signup_scree
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../home_feature/presentation/views/home_screen.dart';
+import '../../../home_feature/presentation/views/home_body.dart';
 import '../../data/models/auth/auth.dart';
 import '../../data/models/auth/user.dart';
 import 'widgets/custom_text_field.dart';

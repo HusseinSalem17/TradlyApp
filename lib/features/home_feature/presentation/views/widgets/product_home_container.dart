@@ -26,11 +26,14 @@ class HomeContainer extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Text(title,
-                    style: const TextStyle(
-                        color: Colors.black54,
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 26,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 const Spacer(flex: 1),
                 CustomButton(
                   height: 30,
@@ -42,13 +45,16 @@ class HomeContainer extends StatelessWidget {
               ],
             ),
           ),
-          ProductCard(model: model)
-          // ListView.builder(
-          //     itemCount: 1,
-          //     scrollDirection: Axis.horizontal,
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return ProductCard(model: model);
-          //     })
+          ListView.builder(
+              itemCount: 20,
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: ProductCard(model: model),
+                );
+              })
         ],
       ),
     );
