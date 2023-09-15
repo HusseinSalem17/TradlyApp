@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomeScreen(),
-    const BrowseView(),
+    const BrowseScreen(),
     const StoreScreen(),
     const OrderHistory(),
     const UserProfile(),
