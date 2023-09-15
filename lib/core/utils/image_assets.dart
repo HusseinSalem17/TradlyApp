@@ -19,4 +19,11 @@ abstract class AssetsImages {
   static const homeCare = 'assets/images/menu/homeCare.png';
   static const vegatables = 'assets/images/menu/vegatables.png';
   static const petCare = 'assets/images/menu/petCare.png';
+
+  // Slider Images List
+  static List<String> sliderImages = [
+    'assets/images/slider_images/s1.jpg',
+    'assets/images/slider_images/s2.jpg',
+    'assets/images/slider_images/s3.jpg',
+  ];
 }

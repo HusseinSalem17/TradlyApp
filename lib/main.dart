@@ -7,6 +7,7 @@ import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/functions/service_locator.dart';
 import 'package:tradly_app/features/auth_feature/data/repos/auth_repo_impl.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/register_cubit/register_cubit.dart';
+import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:tradly_app/routes.dart';
 
 void main() {
@@ -27,6 +28,9 @@ class TradlyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => HomeCubit(),
         ),
       ],
       child: MaterialApp(

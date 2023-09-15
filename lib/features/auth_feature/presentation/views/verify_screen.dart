@@ -6,10 +6,11 @@ import 'package:tradly_app/core/widgets/custom_botton.dart';
 import 'package:tradly_app/features/auth_feature/data/models/request_verify/request_verify.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/verify_cubit/verify_cubit.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_pin_code.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/home_body.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 
 import '../../../../core/widgets/custom_error_widget.dart';
 import '../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../home_feature/presentation/views/home_screen.dart';
 
 class VerifyView extends StatefulWidget {
   static const routeName = '/OTP-screen';

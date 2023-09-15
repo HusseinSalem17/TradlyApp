@@ -9,7 +9,7 @@ class CustomMenuBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: MediaQuery.of(context).size.height / 4,
       child: GridView.count(
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,

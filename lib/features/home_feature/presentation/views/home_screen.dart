@@ -1,83 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Order_history_feature/order_history_view.dart';
 import 'package:tradly_app/features/Profile/profle.dart';
 import 'package:tradly_app/features/browse_feature/browse_view.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/home_body.dart';
-
+import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 
 import '../../../../core/models/product_model.dart';
 import '../../../store_feature/presentation/views/store_screen.dart';
 
-class MyHomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   static const routeName = '/home-screen';
 
-  const MyHomePage({super.key});
+  const HomeScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
+class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
-    const HomeScreen(),
+    const HomeBody(),
     const BrowseView(),
     const StoreScreen(),
     const OrderHistory(),
     const UserProfile(),
   ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AssetsColors.kPrimaryColor,
-      body: _pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.house,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.magnifyingGlass,
-            ),
-            label: 'Browse',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.store,
-            ),
-            label: 'Store',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FontAwesomeIcons.listCheck,
-            ),
-            label: 'Order History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_3_sharp,
-            ),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _currentIndex, // Highlight the current item
-        onTap: _onItemTapped, // Handle the selection
-        fixedColor: AssetsColors.kSecondaryColor,
-        unselectedItemColor: Colors.grey,
-        showUnselectedLabels: true,
-      ),
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        int currentIndex = BlocProvider.of<HomeCubit>(context).currentIndex;
+        return Scaffold(
+          backgroundColor: AssetsColors.kPrimaryColor,
+          body: _pages[currentIndex],
+          bottomNavigationBar: const CustomBottomNavigationBar(),
+        );
+      },
     );
   }
 }
