@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/core/utils/colors.dart';
 
 //     fontFamily: 'Montserrat' by default for all
 const kMontserrat = 'Montserrat';
@@ -48,6 +49,12 @@ abstract class Styles {
   static const textStyleMedium30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w500,
+    fontFamily: kMontserrat,
+  );
+  static const textStyleBold26 = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.w800,
+    color: AssetsColors.kPrimaryTextColor,
     fontFamily: kMontserrat,
   );
 }

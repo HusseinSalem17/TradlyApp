@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
-import 'package:tradly_app/features/onboarding_screen/presentation/views/splash_screen.dart';
+
 import 'package:tradly_app/features/store_feature/presentation/views/create_store_screen.dart';
 
 import 'features/auth_feature/presentation/views/login_screen.dart';

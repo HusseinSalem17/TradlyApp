@@ -24,16 +24,17 @@ class HomeBody extends StatelessWidget {
                 const CustomCarouseSlider(),
                 const CustomMenuBar(),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 17,vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 17, vertical: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'New Product ',
                         style: Styles.textStyleMedium18.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AssetsColors.kPrimaryTextColor,
-                            ),
+                          fontWeight: FontWeight.bold,
+                          color: AssetsColors.kPrimaryTextColor,
+                        ),
                       ),
                       const CustomButton(
                         width: 90,
@@ -43,11 +44,15 @@ class HomeBody extends StatelessWidget {
                       )
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
-          const SliverToBoxAdapter(child: ProductsListView()),
+          const SliverToBoxAdapter(
+            child: ProductsListView(
+              title: '',
+            ),
+          ),
         ],
       ),
     );

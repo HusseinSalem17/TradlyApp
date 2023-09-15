@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Order_history_feature/order_history_view.dart';
 import 'package:tradly_app/features/Profile/profle.dart';
-import 'package:tradly_app/features/browse_feature/browse_view.dart';
 import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_bottom_navigation_bar.dart';
@@ -22,8 +21,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
+
     const HomeBody(),
-    const BrowseView(),
+    //const BrowseView(),
     const StoreScreen(),
     const OrderHistory(),
     const UserProfile(),

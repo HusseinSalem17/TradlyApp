@@ -53,9 +53,10 @@ class ProductCard extends StatelessWidget {
                   child: Text(
                     'T',
                     style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 const Spacer(flex: 1),
