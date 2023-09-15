@@ -3,6 +3,7 @@ import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu
 import 'package:tradly_app/core/models/product_model.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_view.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_cards.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -31,22 +32,27 @@ class BodyHome extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                const CustomAppBar(),
-                Container(height: 150),
-                const CustomMenuBar(),
+                const CustomAppBar(), //             1
+                Container(height: 150), //           2
+                const CustomMenuBar(), //            3
               ],
             ),
           ),
-          const SliverToBoxAdapter(
-            child: ProductsListView()
-          ),
+          const SliverToBoxAdapter(//                4
+              child: ProductsListView(
+            title: 'New Product',
+          )),
+          const SliverToBoxAdapter(//                5
+              child: ProductsListView(
+            title: 'Popular Product',
+          )),
+          const SliverToBoxAdapter(//                6
+            child: StoreMenu()),
         ],
       ),
     );
   }
 }
-
-
 
 ProductModel model = ProductModel(
     image: 'assets/images/coca_Cola.png',

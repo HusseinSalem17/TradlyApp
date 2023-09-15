@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:tradly_app/core/utils/colors.dart';
+
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/create_store_details_section.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/create_store_logo_section.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
 
-import '../../../../core/utils/image_assets.dart';
+
 
 class CreateStoreScreen extends StatelessWidget {
   static const routeName = 'create-store-screen';

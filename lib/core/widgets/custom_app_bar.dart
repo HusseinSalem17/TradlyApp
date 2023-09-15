@@ -10,13 +10,13 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190,
+      height: 170,
       color: AssetsColors.kSecondaryColor,
       child: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            SizedBox(height: 60),
+            SizedBox(height: 30),
             Row(
               children: [
                 Text('Groceries',
