@@ -10,16 +10,17 @@ class ProductsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SizedBox(
+      height: MediaQuery.of(context).size.height*0.3,
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: 20,
-        physics: const NeverScrollableScrollPhysics(),
-        //scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.all(10),
-            child: ProductCard(model: model),
-          );
-        });
+          return ProductCard(model: model);
+        },
+      ),
+    );
   }
 }
