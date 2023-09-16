@@ -1,7 +1,14 @@
-import 'data.dart';
+import 'package:hive/hive.dart';
 
-class ResponseLogin {
+import 'data.dart';
+//this class will be generated auto (type adapter)
+part 'response_login.g.dart';
+
+@HiveType(typeId: 0)
+class ResponseLogin extends HiveObject {
+  @HiveField(0)
   bool? status;
+  @HiveField(1)
   Data? data;
 
   ResponseLogin({this.status, this.data});

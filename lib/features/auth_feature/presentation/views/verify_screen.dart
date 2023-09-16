@@ -81,6 +81,7 @@ class _VerifyViewState extends State<VerifyView> {
                     CustomPinCodeTextField(
                       context: context,
                       otpFiledController: otpFiledController,
+                      verifyId: widget.verifyId,
                     ),
                     const Spacer(
                       flex: 1,
