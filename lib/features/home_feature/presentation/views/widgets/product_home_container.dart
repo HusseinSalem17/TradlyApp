@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/core/utils/text_styles.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_cart.dart';
-
 import '../../../../../core/models/product_model.dart';
 import '../../../../../core/widgets/custom_botton.dart';
 
@@ -20,42 +20,41 @@ class HomeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.black54,
-                    fontSize: 26,
-                    fontWeight: FontWeight.w700,
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.3,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                children: [
+                  Text(
+                    title,
+                    style: Styles.textStyleBold26,
                   ),
-                ),
-                const Spacer(flex: 1),
-                CustomButton(
-                  height: 30,
-                  width: 120,
-                  fontSize: 15,
-                  bottomTitle: 'See All',
-                  onTap: onTap,
-                ),
-              ],
+                  const Spacer(),
+                  const CustomButton(
+                    bottonTitle: 'See All',
+                    height: 30,
+                    width: 110,
+                    fontSize: 16,
+                  )
+                ],
+              ),
             ),
-          ),
-          ListView.builder(
-              itemCount: 20,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(30),
-                  child: ProductCard(model: model),
-                );
-              })
-        ],
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: 20,
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemBuilder: (BuildContext context, int index) {
+                  return ProductCard(model: model);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

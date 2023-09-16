@@ -77,7 +77,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomButton(
                 width: MediaQuery.of(context).size.width,
-                bottomTitle: _pageIndex == 2 ? 'Finish' : 'Next',
+                bottonTitle: _pageIndex == 2 ? 'Finish' : 'Next',
                 onTap: () {
                   if (_pageIndex == 2) {
                     Navigator.pushNamedAndRemoveUntil(

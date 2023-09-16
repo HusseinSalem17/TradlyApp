@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/core/utils/text_styles.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_card_item.dart';
+
+import '../../../../../core/widgets/custom_botton.dart';
 
 class StoreMenu extends StatelessWidget {
   const StoreMenu({super.key});
@@ -13,6 +16,29 @@ class StoreMenu extends StatelessWidget {
         children: [
           Container(
             color: AssetsColors.kSecondaryColor,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Store to follow',
+                      style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: kMontserrat,
+                          color: Colors.white)),
+                  Spacer(),
+                  CustomButton(
+                    bottonTitle: 'View all',
+                    width: 130,
+                    height: 30,
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontColor: AssetsColors.kSecondaryColor,
+                  )
+                ],
+              ),
+            ),
             height: 184,
           ),
           Padding(

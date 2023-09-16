@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tradly_app/core/models/store_model.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
+import 'package:tradly_app/features/onboarding_screen/data/models/store_data.dart';
 
 class StoreCardItem extends StatelessWidget {
   const StoreCardItem({super.key});
@@ -28,7 +29,7 @@ class StoreCardItem extends StatelessWidget {
               height: 30,
               width: 110,
               fontSize: 15,
-              bottomTitle: 'Follow',
+              bottonTitle: 'Follow',
               //onTap: onTap,
             ),
             const SizedBox(
@@ -45,14 +46,3 @@ class StoreCardItem extends StatelessWidget {
   }
 }
 
-StoreModel smodel = StoreModel(
-    name: 'Tradly Store',
-    image: 'assets/images/storeImage.png',
-    webAddress: 'tradly.app',
-    description: 'Sell Groceries and homecare produ t',
-    type: 'Groceries Store',
-    address: '125 Crescent Ave, Woodbury',
-    city: 'New York',
-    state: '125 Crescent Ave, Woodbury',
-    country: 'USA',
-    courierName: 'Blue Dart');

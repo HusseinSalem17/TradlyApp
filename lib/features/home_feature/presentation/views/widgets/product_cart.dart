@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tradly_app/core/models/product_model.dart';
 import '../../../../../core/utils/colors.dart';
 

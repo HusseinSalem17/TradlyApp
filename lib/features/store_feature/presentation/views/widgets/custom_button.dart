@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 
-class CustomButton extends StatelessWidget {
+class CustonButton extends StatelessWidget {
   final Function() onPressed;
   final String text;
 
-  const CustomButton({
+  const CustonButton({
     Key? key,
     required this.onPressed,
     required this.text,

@@ -94,7 +94,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         height: 25,
                         width: 120,
                         fontSize: 14,
-                        bottomTitle: 'Follow'),
+                        bottonTitle: 'Follow'),
                     const Spacer(flex: 1),
                   ],
                 ),
@@ -120,7 +120,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           height: 20,
                         ),
                         CustomButton(
-                          bottomTitle: 'Add To Cart',
+                          bottonTitle: 'Add To Cart',
                           width: MediaQuery.of(context).size.width,
                         ),
                         const Divider(

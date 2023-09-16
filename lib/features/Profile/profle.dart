@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Profile/widgets/profile_menu.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -11,42 +12,27 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AssetsColors.kPrimaryColor,
-      appBar: AppBar(
-        title: const Text('Profile',
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 24,
-                fontFamily: 'Montserrat')),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        backgroundColor: AssetsColors.kSecondaryColor,
-        actions: [
+      appBar: CustomAppBar(
+        title: 'Profile',
+        centerTitle: false,
+        actionIcons: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.solidHeart,
-              color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.cartShopping,
-              color: Colors.white,
-            ),
+            icon: const Icon(Icons.favorite),
           ),
         ],
       ),
       body: Stack(
+        
         children: [
-          const Align(child: Positioned(child: ProfileMenu())),
+          
           Container(
             color: AssetsColors.kSecondaryColor,
             height: MediaQuery.of(context).size.height / 3,
             child: Column(
               children: [
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Spacer(flex: 1),
                     SvgPicture.asset(
@@ -73,6 +59,9 @@ class UserProfile extends StatelessWidget {
               ],
             ),
           ),
+          const Center(
+            child: ProfileMenu(),
+          )
         ],
       ),
     );

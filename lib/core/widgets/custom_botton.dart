@@ -10,14 +10,14 @@ class CustomButton extends StatelessWidget {
     this.fontSize = 20,
     required this.width,
     this.isLoading = false,
-    required this.bottomTitle,
+    required this.bottonTitle,
     this.color = AssetsColors.kSecondaryColor,
     this.fontColor = Colors.white,
   });
 
   final void Function()? onTap;
   final bool isLoading;
-  final String bottomTitle;
+  final String bottonTitle;
   final double height;
   final double width;
   final double fontSize;
@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
             child: isLoading
                 ? const CircularProgressIndicator(color: Colors.black45)
                 : Text(
-                    bottomTitle,
+                    bottonTitle,
                     style: TextStyle(
                         color: fontColor,
                         fontSize: fontSize,

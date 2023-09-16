@@ -105,7 +105,7 @@ class _VerifyViewState extends State<VerifyView> {
                       flex: 1,
                     ),
                     CustomButton(
-                      bottomTitle: 'Verify',
+                      bottonTitle: 'Verify',
                       width: MediaQuery.of(context).size.width,
                       color: Colors.white,
                       fontColor: AssetsColors.kSecondaryColor,

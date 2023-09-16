@@ -57,7 +57,7 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustomButton(onPressed: () {
+                    child: CustonButton(onPressed: () {
                       /// this for loop to test the controller
                       for (int i = 0; i < textControllers.length; i++) {
                         print('Field ${i + 1}: ${textControllers[i].text.trim()}');

@@ -13,7 +13,7 @@ class ProfileMenu extends StatelessWidget {
       color: Colors.white,
       width: 300,
       height: 300,
-      //decoration: BoxDecoration(),
+      //decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         TextButton(
           onPressed: () {},

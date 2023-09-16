@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/utils/colors.dart';
-import 'package:tradly_app/core/utils/text_styles.dart';
-import 'package:tradly_app/core/widgets/custom_botton.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_carousel_slider.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_view.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_home_container.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_cards.dart';
+import 'package:tradly_app/features/onboarding_screen/data/models/product_data.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -18,50 +16,26 @@ class HomeBody extends StatelessWidget {
     return SafeArea(
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
               children: [
-                const CustomAppBar(),
-                const CustomCarouseSlider(),
-                const CustomMenuBar(),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 17, vertical: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'New Product ',
-                        style: Styles.textStyleMedium18.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: AssetsColors.kPrimaryTextColor,
-                        ),
-                      ),
-                      const CustomButton(
-                        width: 90,
-                        bottomTitle: 'See All',
-                        height: 26,
-                        fontSize: 12,
-                      )
-                    ],
-                  ),
-                ),
+                CustomAppBar(),
+                CustomCarouseSlider(),
+                CustomMenuBar(),
               ],
             ),
           ),
-
-          const SliverToBoxAdapter(
-            child: ProductsListView(
-              title: '',
-            ),
-          ),
-          const SliverToBoxAdapter(
-              //                5
-              child: ProductsListView(
-            title: 'Popular Product',
+          SliverToBoxAdapter(
+              child: HomeContainer(
+            title: 'New Product',
+            model: model,
+          )),
+          SliverToBoxAdapter(
+              child: HomeContainer(
+            title: 'Popular Products',
+            model: model,
           )),
           const SliverToBoxAdapter(
-            //                6
             child: StoreMenu(),
           ),
         ],
