@@ -16,17 +16,17 @@ class ProductsListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.3,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal:16,vertical: 8),
-            child: Row(
-              children: [
-                Text(
-                  title,
-                  style: Styles.textStyleBold26,
-                ),
-              ],
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal:16,vertical: 8),
+          //   // child: Row(
+          //   //   children: [
+          //   //     Text(
+          //   //       title,
+          //   //       style: Styles.textStyleBold26,
+          //   //     ),
+          //   //   ],
+          //   // ),
+          // ),
           Expanded(
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),

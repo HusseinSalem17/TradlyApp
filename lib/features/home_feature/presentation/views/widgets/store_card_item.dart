@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tradly_app/core/models/store_model.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
 
-class StoreCard extends StatelessWidget {
-  const StoreCard({super.key});
+class StoreCardItem extends StatelessWidget {
+  const StoreCardItem({super.key});
 
   @override
   Widget build(BuildContext context) {

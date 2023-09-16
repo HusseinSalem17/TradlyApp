@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
 
-class BrowseBotton extends StatelessWidget {
+class BrowseButton extends StatelessWidget {
   final String title;
   final Icon icon;
   final void Function()? onTap;
-  const BrowseBotton(
-      {super.key, required this.title, required this.icon, this.onTap});
+
+  const BrowseButton({
+    super.key,
+    required this.title,
+    required this.icon,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class BrowseBotton extends StatelessWidget {
       icon: icon,
       label: Text(title, style: Styles.textStyleRegular14),
       style: ElevatedButton.styleFrom(
-        backgroundColor: AssetsColors.kSecondaryColor,
+        backgroundColor: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),

@@ -15,7 +15,7 @@ abstract class AssetsImages {
   static const bread = 'assets/images/menu/bread.png';
   static const egg = 'assets/images/menu/egg.png';
   static const frozenVeg = 'assets/images/menu/frozenVeg.png';
-  static const fruit = 'assets/images/menu/fruit.png';
+  static const fruit = 'assets/images/menu/Fruit.png';
   static const homeCare = 'assets/images/menu/homeCare.png';
   static const vegatables = 'assets/images/menu/vegatables.png';
   static const petCare = 'assets/images/menu/petCare.png';

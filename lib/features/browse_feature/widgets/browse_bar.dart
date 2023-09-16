@@ -22,7 +22,7 @@ class BrowseBar extends StatelessWidget {
               const Spacer(),
               Row(
                 children: [
-                  BrowseBotton(
+                  BrowseButton(
                     title: 'Sort by',
                     icon: const Icon(
                       Icons.sort_outlined,
@@ -30,7 +30,7 @@ class BrowseBar extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  BrowseBotton(
+                  BrowseButton(
                     title: 'Location',
                     icon: const Icon(
                       Icons.location_on_outlined,
@@ -38,7 +38,7 @@ class BrowseBar extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  BrowseBotton(
+                  BrowseButton(
                     title: 'Category',
                     icon: const Icon(
                       Icons.list_alt_outlined,

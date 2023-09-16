@@ -6,6 +6,7 @@ import 'package:tradly_app/features/home_feature/presentation/views/widgets/cust
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/menu_bar.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_view.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_cards.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -48,10 +49,20 @@ class HomeBody extends StatelessWidget {
               ],
             ),
           ),
+
           const SliverToBoxAdapter(
             child: ProductsListView(
               title: '',
             ),
+          ),
+          const SliverToBoxAdapter(
+              //                5
+              child: ProductsListView(
+            title: 'Popular Product',
+          )),
+          const SliverToBoxAdapter(
+            //                6
+            child: StoreMenu(),
           ),
         ],
       ),
