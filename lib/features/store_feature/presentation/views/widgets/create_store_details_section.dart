@@ -42,6 +42,7 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
         child: Container(
           color: AssetsColors.white,
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(

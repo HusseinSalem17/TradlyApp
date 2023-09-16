@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/data_helper/menu_bar_data.dart';
-import 'category_icon.dart';
+import 'category_items.dart';
 
 class CustomMenuBar extends StatelessWidget {
   const CustomMenuBar({super.key});
@@ -17,7 +17,7 @@ class CustomMenuBar extends StatelessWidget {
         mainAxisSpacing: 1,
         children: List.generate(
           8,
-          (index) => CategoryIcon(
+          (index) => CategoryItems(
             model: categoryModel[index],
           ),
         ),

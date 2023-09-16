@@ -4,8 +4,8 @@ import 'package:tradly_app/core/models/store_model.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
 import 'package:tradly_app/features/onboarding_screen/data/models/store_data.dart';
 
-class StoreCardItem extends StatelessWidget {
-  const StoreCardItem({super.key});
+class StoreListItem extends StatelessWidget {
+  const StoreListItem({super.key});
 
   @override
   Widget build(BuildContext context) {

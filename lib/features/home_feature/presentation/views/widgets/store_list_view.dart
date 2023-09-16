@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_card_item.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_list_item.dart';
 
 import '../../../../../core/widgets/custom_botton.dart';
 
-class StoreMenu extends StatelessWidget {
-  const StoreMenu({super.key});
+class StoreListView extends StatelessWidget {
+  const StoreListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +16,21 @@ class StoreMenu extends StatelessWidget {
         children: [
           Container(
             color: AssetsColors.kSecondaryColor,
-            child: Padding(
-              padding: EdgeInsets.all(16),
+            height: 184,
+            child:  Padding(
+              padding: const EdgeInsets.all(16),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Store to follow',
-                      style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: kMontserrat,
-                          color: Colors.white)),
-                  Spacer(),
-                  CustomButton(
+                  Text(
+                    'Store to follow',
+                    style: Styles.textStyleMedium18.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: AssetsColors.white
+                    ),
+                  ),
+                  const Spacer(),
+                  const CustomButton(
                     bottonTitle: 'View all',
                     width: 130,
                     height: 30,
@@ -39,7 +41,6 @@ class StoreMenu extends StatelessWidget {
                 ],
               ),
             ),
-            height: 184,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 60),
@@ -51,7 +52,7 @@ class StoreMenu extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
-                  return const StoreCardItem();
+                  return const StoreListItem();
                 },
               ),
             ),

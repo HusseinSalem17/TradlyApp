@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/core/models/product_model.dart';
 import '../../../../../core/utils/colors.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key, required this.model});
+class ProductListItem extends StatelessWidget {
+  const ProductListItem({super.key, required this.model});
 
   final ProductModel model;
 
@@ -48,7 +48,7 @@ class ProductCard extends StatelessWidget {
                 const Spacer(flex: 1),
                 const CircleAvatar(
                   backgroundColor: AssetsColors.kSecondaryColor,
-                  radius: 13,
+                  radius: 11,
                   child: Text(
                     'T',
                     style: TextStyle(
