@@ -19,4 +19,15 @@ class AddUserCubit extends Cubit<AddUserState> {
       emit(AddUserFailure(e.toString()));
     }
   }
+
+  getUesrs() async {
+    emit(AddUserLoading());
+    try {
+      var usersBox = Hive.box<ResponseLogin>(kResponseLoginBox);
+      var users = usersBox.values.toList();
+      emit(AddUserSuccess(response: users[0]));
+    } catch (e) {
+      emit(AddUserFailure(e.toString()));
+    }
+  }
 }
