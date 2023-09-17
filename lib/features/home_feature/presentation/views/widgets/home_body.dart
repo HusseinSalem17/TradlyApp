@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_carousel_slider.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_menu_bar.dart';
-import 'package:tradly_app/core/widgets/custom_app_bar.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_view.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/store_list_view.dart';
 import 'package:tradly_app/features/onboarding_screen/data/models/product_data.dart';
@@ -19,7 +19,7 @@ class HomeBody extends StatelessWidget {
           const SliverToBoxAdapter(
             child: Column(
               children: [
-                CustomAppBar(),
+                CustomHomeAppBar(),
                 CustomCarouseSlider(),
                 CustomMenuBar(),
               ],

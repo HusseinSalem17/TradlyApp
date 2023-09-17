@@ -3,29 +3,28 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Profile/widgets/profile_menu.dart';
-import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
+import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
+
   static const routeName = '/user-profile';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AssetsColors.kPrimaryColor,
-      appBar: CustomAppBar(
+      appBar: CustomAppBarWithActions(
         title: 'Profile',
-        centerTitle: false,
-        actionIcons: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite),
-          ),
-        ],
+        onTapCartIcon: () {
+          print('onTapCartIcon');
+        },
+        onTapFavoriteIcon: () {
+          print('onTapFavoriteIcon');
+        },
       ),
       body: Stack(
-        
         children: [
-          
           Container(
             color: AssetsColors.kSecondaryColor,
             height: MediaQuery.of(context).size.height / 3,

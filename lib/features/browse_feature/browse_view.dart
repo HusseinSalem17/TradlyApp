@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:tradly_app/features/browse_feature/widgets/browse_bar.dart';
-import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
+import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
 
 class BrowseScreen extends StatelessWidget {
   static const routeName = '/store-screen';
@@ -11,25 +11,16 @@ class BrowseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: CustomAppBarWithActions(
         title: 'Browse',
-        centerTitle: false,
-        
-        actionIcons: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.shopping_cart_rounded),
-          ),
-        ],
+        onTapCartIcon: () {
+          print('onTapCartIcon');
+        },
+        onTapFavoriteIcon: () {
+          print('onTapFavoriteIcon');
+        },
       ),
       body: const BrowseBar(),
     );
   }
 }
-
-
-
