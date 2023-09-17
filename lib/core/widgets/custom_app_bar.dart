@@ -1,48 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tradly_app/core/widgets/search_text_field.dart';
 
 import '../utils/colors.dart';
+import '../utils/text_styles.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => const Size.fromHeight(65);
+  final String title;
+
+  const CustomAppBar({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 170,
-      color: AssetsColors.kSecondaryColor,
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            SizedBox(height: 30),
-            Row(
-              children: [
-                Text('Groceries',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                        fontFamily: 'Montserrat')),
-                Spacer(flex: 8),
-                Icon(
-                  FontAwesomeIcons.solidHeart,
-                  color: Colors.white,
-                ),
-                Spacer(flex: 1),
-                Icon(
-                  FontAwesomeIcons.cartShopping,
-                  color: Colors.white,
-                ),
-              ],
-            ),
-            SizedBox(height: 30),
-            SearchTextField(
-              hint: 'Search product',
-            ),
-          ],
-        ),
+    return AppBar(
+      centerTitle: true,
+      backgroundColor: AssetsColors.kSecondaryColor,
+      elevation: 0,
+      title: Text(
+        title,
+        style: Styles.textStyleMedium24.copyWith(fontWeight: FontWeight.bold),
       ),
     );
   }

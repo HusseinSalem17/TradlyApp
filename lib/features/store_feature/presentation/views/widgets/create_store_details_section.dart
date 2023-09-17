@@ -3,6 +3,7 @@ import 'package:tradly_app/core/utils/text_styles.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
 
 import '../../../../../core/utils/colors.dart';
+import 'custom_text_field_input_chip.dart';
 import 'custom_text_form_field.dart';
 
 class CreateStoreDetailsSection extends StatefulWidget {
@@ -18,7 +19,7 @@ class CreateStoreDetailsSection extends StatefulWidget {
 class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
   TextEditingController controller = TextEditingController();
   final List<TextEditingController> textControllers = List.generate(
-    10,
+    8,
     (index) => TextEditingController(),
   );
   final List<String> textFormFiledLabels = [
@@ -30,8 +31,6 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
     'City',
     'Country',
     'Courier Name',
-    'Courier Name',
-    'Tagline',
   ];
 
   @override
@@ -48,7 +47,7 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
               child: Column(
                 children: [
                   ...List.generate(
-                    10,
+                    8,
                     (index) {
                       return CustomTextFormField(
                         labelText: textFormFiledLabels[index],
@@ -56,15 +55,20 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
                       );
                     },
                   ),
+                  const CustomTextFieldInputChip(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustonButton(onPressed: () {
-                      /// this for loop to test the controller
-                      for (int i = 0; i < textControllers.length; i++) {
-                        print('Field ${i + 1}: ${textControllers[i].text.trim()}');
-                      }
-                    }, text: 'Create'),
-                  )
+                    child: CustonButton(
+                      onPressed: () {
+                        /// this for loop to test the controller
+                        for (int i = 0; i < textControllers.length; i++) {
+                          print(
+                              'Field ${i + 1}: ${textControllers[i].text.trim()}');
+                        }
+                      },
+                      text: 'Create',
+                    ),
+                  ),
                 ],
               ),
             ),
