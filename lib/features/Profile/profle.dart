@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Profile/widgets/profile_menu.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
@@ -23,16 +22,14 @@ class UserProfile extends StatelessWidget {
         ],
       ),
       body: Stack(
-        
         children: [
-          
           Container(
             color: AssetsColors.kSecondaryColor,
             height: MediaQuery.of(context).size.height / 3,
             child: Column(
               children: [
+                const SizedBox(height: 30,),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Spacer(flex: 1),
                     SvgPicture.asset(
@@ -59,8 +56,9 @@ class UserProfile extends StatelessWidget {
               ],
             ),
           ),
-          const Center(
-            child: ProfileMenu(),
+          const Padding(
+            padding: EdgeInsets.only(top: 140),
+            child: Align(alignment: Alignment.topCenter, child: ProfileMenu()),
           )
         ],
       ),

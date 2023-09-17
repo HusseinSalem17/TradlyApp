@@ -8,7 +8,7 @@ import 'package:tradly_app/features/home_feature/presentation/views/widgets/home
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 
 import '../../../../core/models/product_model.dart';
-import '../../../browse_feature/browse_view.dart';
+import '../../../browse_feature/presentation/view/browse_view.dart';
 import '../../../store_feature/presentation/views/store_screen.dart';
 
 class HomeScreen extends StatefulWidget {

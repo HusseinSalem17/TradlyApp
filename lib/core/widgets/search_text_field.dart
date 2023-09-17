@@ -20,8 +20,8 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      // onSaved: onSaved,
-      // onChanged: onchange,
+      //onSaved: onSaved,
+      onChanged: onchange,
       // validator: (value) {
       //   if (value?.isEmpty ?? true) {
       //     return 'field is required';
