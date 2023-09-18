@@ -9,41 +9,49 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.normal,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleBold10 = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w700,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleRegular14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleMedium16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleMedium18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleMedium20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleMedium24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w500,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleRegular26 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.w400,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleRegular24 = TextStyle(
     fontSize: 26,
@@ -55,11 +63,12 @@ abstract class Styles {
     fontSize: 30,
     fontWeight: FontWeight.w500,
     fontFamily: kMontserrat,
+    color: AssetsColors.white,
   );
   static const textStyleBold26 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.w800,
-    color: AssetsColors.kPrimaryTextColor,
     fontFamily: kMontserrat,
+    color: AssetsColors.kPrimaryTextColor,
   );
 }

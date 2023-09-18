@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/core/utils/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, this.hintText, required this.controller});
@@ -11,19 +12,32 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       //onChanged: onChanged,
       controller: controller,
+      style: const TextStyle(color: AssetsColors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: TextStyle(color: AssetsColors.white.withOpacity(0.7)),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: AssetsColors.white,
           ),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: AssetsColors.white,
+          ),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(
+            color: AssetsColors.white,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(
+            color: AssetsColors.white,
           ),
         ),
       ),

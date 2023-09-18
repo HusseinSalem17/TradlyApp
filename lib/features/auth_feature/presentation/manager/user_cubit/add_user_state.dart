@@ -11,10 +11,16 @@ class AddUserInitial extends AddUserState {}
 
 class AddUserLoading extends AddUserState {}
 
-class AddUserSuccess extends AddUserState {
+class AddUserWithAuthSuccess extends AddUserState {
   final ResponseLogin response;
 
-  const AddUserSuccess({required this.response});
+  const AddUserWithAuthSuccess({required this.response});
+}
+
+class AddUserForLoginSuccess extends AddUserState {
+  final User response;
+
+  const AddUserForLoginSuccess({required this.response});
 }
 
 class AddUserFailure extends AddUserState {

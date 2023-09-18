@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/core/utils/text_styles.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/registration_custom_button.dart';
-
 
 import 'package:uuid/uuid.dart';
 
@@ -45,11 +45,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    late User user;
     return Scaffold(
+      backgroundColor: AssetsColors.kSecondaryColor,
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           if (state is RegisterSuccess) {
-            Navigator.pushReplacementNamed(context, VerifyView.routeName,arguments:state.response.data!.verifyId);
+            Navigator.pushNamed(
+              context,
+              VerifyView.routeName,
+              arguments: [state.response.data!.verifyId, user],
+            );
           }
         },
         builder: (context, state) {
@@ -61,96 +67,91 @@ class _SignUpScreenState extends State<SignUpScreen> {
             );
           } else {
             return SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(height: 100),
-                  const Text(
-                    'Welcome to tradly',
-                    style: TextStyle(
-                      //color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  const Text(
-                    'Signup to your account',
-                    style: TextStyle(
-                      //color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  CustomTextField(
-                    controller: firstNameController,
-                    hintText: 'First Name',
-                  ),
-                  const SizedBox(height: 10),
-                  CustomTextField(
-                    controller: lastNameController,
-                    hintText: 'Last Name',
-                  ),
-                  const SizedBox(height: 10),
-                  CustomTextField(
-                    controller: emailController,
-                    hintText: 'Email/Mobile Number',
-                  ),
-                  const SizedBox(height: 10),
-                  CustomTextField(
-                    controller: passwordController,
-                    hintText: 'Password',
-                  ),
-                  const SizedBox(height: 10),
-                  CustomTextField(
-                    controller: rePasswordController,
-                    hintText: 'Re-enter Password',
-                  ),
-                  const SizedBox(height: 20),
-                  RegistrationButton(
-                    text: 'Create',
-                    onPressed: () {
-                      String id = const Uuid().v1();
-                      User user = User(
-                        uuid: id,
-                        firstName: 'Hussein',
-                        lastName: 'Salem',
-                        email: 'husseinsalem910@gmail.com',
-                        password: '01093637794',
-                        type: 'customer',
-                      );
-                      Auth data = Auth(user: user);
-                      BlocProvider.of<RegisterCubit>(context)
-                          .register(data: data);
-                    },
-                  ),
-                  const SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Have an account? ',
-                        style: TextStyle(
-                          //color: Colors.white,
-                          fontSize: 18,
-                        ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 8.0,
+                  horizontal: 16.0,
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 100),
+                    const Text('Welcome to tradly',
+                        style: Styles.textStyleMedium24),
+                    const SizedBox(height: 40),
+                    Text(
+                      'Signup to your account',
+                      style: Styles.textStyleMedium16.copyWith(
+                        fontWeight: FontWeight.w100,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text(
-                          ' Sign in',
-                          style: TextStyle(
-                            //color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CustomTextField(
+                      controller: firstNameController,
+                      hintText: 'First Name',
+                    ),
+                    const SizedBox(height: 10),
+                    CustomTextField(
+                      controller: lastNameController,
+                      hintText: 'Last Name',
+                    ),
+                    const SizedBox(height: 10),
+                    CustomTextField(
+                      controller: emailController,
+                      hintText: 'Email/Mobile Number',
+                    ),
+                    const SizedBox(height: 10),
+                    CustomTextField(
+                      controller: passwordController,
+                      hintText: 'Password',
+                    ),
+                    const SizedBox(height: 10),
+                    CustomTextField(
+                      controller: rePasswordController,
+                      hintText: 'Re-enter Password',
+                    ),
+                    const SizedBox(height: 20),
+                    RegistrationButton(
+                      text: 'Create',
+                      onPressed: () {
+                        String id = const Uuid().v1();
+                        user = User(
+                          uuid: id,
+                          firstName: firstNameController.text,
+                          lastName: lastNameController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                          type: 'customer',
+                        );
+                        Auth data = Auth(user: user);
+                        BlocProvider.of<RegisterCubit>(context)
+                            .register(data: data);
+                      },
+                    ),
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Have an account? ',
+                          style: Styles.textStyleMedium18,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            ' Sign in',
+                            style: Styles.textStyleMedium18.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             );
           }
@@ -158,5 +159,4 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
-
-  }
+}

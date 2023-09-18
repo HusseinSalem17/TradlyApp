@@ -31,13 +31,13 @@ class CustomPinCodeTextField extends StatelessWidget {
         color: AssetsColors.white,
       ),
       onCompleted: (result) {
-        RequestVerify data = RequestVerify(
-          verifyId: verifyId,
-          code: int.parse(
-            otpFiledController.text.trim(),
-          ),
-        );
-        BlocProvider.of<VerifyCubit>(context).verify(data: data);
+        // RequestVerify data = RequestVerify(
+        //   verifyId: verifyId,
+        //   code: int.parse(
+        //     otpFiledController.text.trim(),
+        //   ),
+        // );
+        // BlocProvider.of<VerifyCubit>(context).verify(data: data);
       },
       pinTheme: PinTheme(
         borderRadius: BorderRadius.circular(5),

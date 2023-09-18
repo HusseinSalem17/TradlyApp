@@ -3,21 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
+import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/data/models/request_verify/request_verify.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/verify_cubit/verify_cubit.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_pin_code.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 
 import '../../../../core/widgets/custom_error_widget.dart';
 import '../../../../core/widgets/custom_loading_indicator.dart';
 import '../../../home_feature/presentation/views/home_screen.dart';
+import '../manager/user_cubit/add_user_cubit.dart';
 
 class VerifyView extends StatefulWidget {
   static const routeName = '/OTP-screen';
 
-  const VerifyView({super.key, required this.verifyId});
+  const VerifyView({super.key, required this.verifyId, required this.user});
 
   final int verifyId;
+  final User user;
   @override
   State<VerifyView> createState() => _VerifyViewState();
 }
@@ -43,6 +45,10 @@ class _VerifyViewState extends State<VerifyView> {
         body: BlocConsumer<VerifyCubit, VerifyState>(
           listener: (context, state) {
             if (state is VerifySuccess) {
+              BlocProvider.of<AddUserCubit>(context)
+                  .addUserForLogin(user: widget.user);
+              BlocProvider.of<AddUserCubit>(context)
+                  .addUserWithAuth(user: state.response);
               Navigator.pushReplacementNamed(context, HomeScreen.routeName);
             }
           },
