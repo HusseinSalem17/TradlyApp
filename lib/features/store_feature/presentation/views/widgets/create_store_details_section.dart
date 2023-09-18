@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
 
 import '../../../../../core/utils/colors.dart';
@@ -58,13 +59,17 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
                   const CustomTextFieldInputChip(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustonButton(
+                    child: CustomButton(
                       onPressed: () {
                         /// this for loop to test the controller
                         for (int i = 0; i < textControllers.length; i++) {
                           print(
                               'Field ${i + 1}: ${textControllers[i].text.trim()}');
                         }
+                        Navigator.pushNamed(
+                          context,
+                          AddProductScreen.routeName,
+                        );
                       },
                       text: 'Create',
                     ),

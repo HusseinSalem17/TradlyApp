@@ -31,7 +31,7 @@ class StoreScreenBody extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          CustonButton(
+          CustomButton(
             onPressed: () {
               Navigator.pushNamed(context, CreateStoreScreen.routeName);
             },

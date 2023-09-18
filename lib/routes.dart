@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
 
 import 'package:tradly_app/features/store_feature/presentation/views/create_store_screen.dart';
 
@@ -55,6 +56,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case CreateStoreScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const CreateStoreScreen(),
+      );
+    case AddProductScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AddProductScreen(),
       );
 
     /// the productDetailScreen not have a logic yet now !!!!
