@@ -20,6 +20,7 @@ class VerifyView extends StatefulWidget {
 
   final int verifyId;
   final User user;
+
   @override
   State<VerifyView> createState() => _VerifyViewState();
 }
@@ -27,11 +28,11 @@ class VerifyView extends StatefulWidget {
 class _VerifyViewState extends State<VerifyView> {
   final TextEditingController otpFiledController = TextEditingController();
 
-  @override
-  void dispose() {
-    otpFiledController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   otpFiledController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -62,75 +63,77 @@ class _VerifyViewState extends State<VerifyView> {
             } else {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Spacer(flex: 2),
-                    const Text(
-                      'Phone Verification',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Spacer(flex: 2),
+                      const Text(
+                        'Phone Verification',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                        ),
                       ),
-                    ),
-                    const Text(
-                      'Enter your OTP code here',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 16,
+                      const Text(
+                        'Enter your OTP code here',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 16,
+                        ),
                       ),
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    CustomPinCodeTextField(
-                      context: context,
-                      otpFiledController: otpFiledController,
-                      verifyId: widget.verifyId,
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    const Text(
-                      'Didn’t you received any code? ',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
+                      const Spacer(
+                        flex: 1,
                       ),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text('Resent new code',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300)),
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    CustomButton(
-                      bottonTitle: 'Verify',
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.white,
-                      fontColor: AssetsColors.kSecondaryColor,
-                      onTap: () {
-                        RequestVerify data = RequestVerify(
-                          verifyId: widget.verifyId,
-                          code: int.parse(
-                            otpFiledController.text.trim(),
-                          ),
-                        );
-                        BlocProvider.of<VerifyCubit>(context)
-                            .verify(data: data);
-                      },
-                    ),
-                    const Spacer(
-                      flex: 3,
-                    ),
-                  ],
+                      CustomPinCodeTextField(
+                        context: context,
+                        otpFiledController: otpFiledController,
+                        verifyId: widget.verifyId,
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      const Text(
+                        'Didn’t you received any code? ',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('Resent new code',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300)),
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      CustomButton(
+                        bottonTitle: 'Verify',
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.white,
+                        fontColor: AssetsColors.kSecondaryColor,
+                        onTap: () {
+                          RequestVerify data = RequestVerify(
+                            verifyId: widget.verifyId,
+                            code: int.parse(
+                              otpFiledController.text.trim(),
+                            ),
+                          );
+                          BlocProvider.of<VerifyCubit>(context)
+                              .verify(data: data);
+                        },
+                      ),
+                      const Spacer(
+                        flex: 3,
+                      ),
+                    ],
+                  ),
                 ),
               );
             }

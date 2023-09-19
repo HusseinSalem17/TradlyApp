@@ -33,7 +33,7 @@ abstract class Styles {
     fontSize: 18,
     fontWeight: FontWeight.w400,
     fontFamily: kMontserrat,
-    color: AssetsColors.white,
+    color: AssetsColors.kPrimaryTextColor,
   );
   static const textStyleMedium20 = TextStyle(
     fontSize: 20,

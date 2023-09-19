@@ -23,10 +23,17 @@ class AddProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CustomAppBar(title: 'Add Product'),
-      body: Stack(
-        children: [
-          AddPhotosSection(),
-          AddProductDetailsSection(),
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Stack(
+              children: [
+                AddPhotosSection(),
+                AddProductDetailsSection(),
+              ],
+            ),
+          )
         ],
       ),
     );
