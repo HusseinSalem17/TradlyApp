@@ -1,9 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
 
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
 import '../../../../core/utils/colors.dart';
+import '../../../../core/utils/image_assets.dart';
+import '../../../../core/utils/text_styles.dart';
+import '../../../auth_feature/presentation/manager/user_cubit/add_user_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,7 +21,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      final bool authenticationBloc =
+          BlocProvider.of<AddUserCubit>(context).checkLogged();
+      if (authenticationBloc == true) {
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      }
     });
     super.initState();
   }
@@ -24,8 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AssetsColors.kSecondaryColor,
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
@@ -38,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Center(
                   child: SvgPicture.asset(
-                    'assets/images/logo.svg',
+                    AssetsImages.logo,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -48,12 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
           const Center(
             child: Text(
               "Tradly",
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
-              ),
+              style: Styles.textStyleMedium30,
             ),
           ),
         ],

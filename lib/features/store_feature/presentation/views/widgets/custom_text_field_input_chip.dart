@@ -6,7 +6,14 @@ import '../../../../../core/utils/text_styles.dart';
 import '../../../data/popular_tagline_words.dart';
 
 class CustomTextFieldInputChip extends StatefulWidget {
-  const CustomTextFieldInputChip({Key? key}) : super(key: key);
+  final TextEditingController textEditingController;
+  final String labelText;
+
+  const CustomTextFieldInputChip({
+    Key? key,
+    required this.textEditingController,
+    required this.labelText,
+  }) : super(key: key);
 
   @override
   State<CustomTextFieldInputChip> createState() =>
@@ -14,16 +21,9 @@ class CustomTextFieldInputChip extends StatefulWidget {
 }
 
 class _CustomTextFieldInputChipState extends State<CustomTextFieldInputChip> {
-  final TextEditingController _textEditingController = TextEditingController();
   List<String> selectedChips = [];
   List<String> availableChips = [];
   Widget? hintTextChip;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _textEditingController.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _CustomTextFieldInputChipState extends State<CustomTextFieldInputChip> {
       children: [
         Align(
           alignment: Alignment.centerLeft,
-          child: Row(
+          child: Wrap(
             children: selectedChips.map((String chipLabel) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 2),
@@ -59,21 +59,21 @@ class _CustomTextFieldInputChipState extends State<CustomTextFieldInputChip> {
           ),
         ),
         TextField(
-          controller: _textEditingController,
+          controller: widget.textEditingController,
           onChanged: (value) {
             setState(() {
               // Filter available chips based on user input
               availableChips = PopularTaglineWords.popularWords
                   .where((word) =>
-                      word.toLowerCase().startsWith(value.toLowerCase()))
+                  word.toLowerCase().startsWith(value.toLowerCase()))
                   .toList();
               if (availableChips.isNotEmpty &&
-                  _textEditingController.text.isNotEmpty) {
+                  widget.textEditingController.text.isNotEmpty) {
                 hintTextChip = GestureDetector(
                   onTap: () {
                     setState(() {
                       selectedChips.add(availableChips[0]);
-                      _textEditingController.clear();
+                      widget.textEditingController.clear();
                       hintTextChip = null;
                     });
                   },
@@ -92,13 +92,13 @@ class _CustomTextFieldInputChipState extends State<CustomTextFieldInputChip> {
             if (value.isNotEmpty) {
               setState(() {
                 selectedChips.add(value);
-                _textEditingController.clear();
+                widget.textEditingController.clear();
                 hintTextChip = null;
               });
             }
           },
           decoration: InputDecoration(
-            labelText: 'Tagline',
+            labelText: widget.labelText,
             labelStyle: Styles.textStyleRegular14.copyWith(
               color: AssetsColors.kTextGrey,
               fontSize: 16,

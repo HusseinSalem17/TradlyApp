@@ -28,10 +28,11 @@ class StoreScreenBody extends StatelessWidget {
             'You Don\'t Have a Store ',
             style: Styles.textStyleMedium18.copyWith(
               fontWeight: FontWeight.bold,
+              color: Colors.black
             ),
           ),
           const Spacer(),
-          CustonButton(
+          CustomButton(
             onPressed: () {
               Navigator.pushNamed(context, CreateStoreScreen.routeName);
             },

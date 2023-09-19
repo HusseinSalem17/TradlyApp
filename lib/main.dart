@@ -7,8 +7,12 @@ import 'package:tradly_app/constants.dart';
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/functions/service_locator.dart';
+import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/data/repos/auth_repo_impl.dart';
+import 'package:tradly_app/features/auth_feature/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/register_cubit/register_cubit.dart';
+import 'package:tradly_app/features/auth_feature/presentation/manager/user_cubit/add_user_cubit.dart';
+import 'package:tradly_app/features/auth_feature/presentation/manager/verify_cubit/verify_cubit.dart';
 import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:tradly_app/routes.dart';
 
@@ -23,9 +27,14 @@ void main() async {
   //Init Hive
   await Hive.initFlutter();
   Hive.registerAdapter(ResponseLoginAdapter());
-  await Hive.openBox<ResponseLogin>(kResponseLoginBox);
+  Hive.registerAdapter(UserAdapter());
+  await Hive.openBox<ResponseLogin>(kResponseLoginBoxForAuth);
+  await Hive.openBox<User>(kLoginBox);
 
-  runApp(const TradlyApp());
+  runApp(BlocProvider(
+    create: (context) => AddUserCubit(),
+    child: const TradlyApp(),
+  ));
 }
 
 class TradlyApp extends StatelessWidget {
@@ -39,13 +48,19 @@ class TradlyApp extends StatelessWidget {
           create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
         ),
         BlocProvider(
+          create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => VerifyCubit(getIt.get<AuthRepoImpl>()),
+        ),
+        BlocProvider(
           create: (context) => HomeCubit(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: Themes.customLightTheme,
-        onGenerateRoute: (settings) => generateRoute(settings),
+        onGenerateRoute: (settings) => generateRoute(settings, context),
       ),
     );
   }

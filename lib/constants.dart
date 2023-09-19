@@ -4,4 +4,7 @@ const publishable_key =
     'Bearer pk_live_48cfe836339c2c7165b9e72766e0cfa7b8ee6aed815ecfc101809a5f527aad67';
 const secret_key =
     'sk_live_8c33adc2ac7c632cba9f6fef55784d06f320e85d72aa99b67ec7f148814488fb';
-const kResponseLoginBox = 'response_login_box';
+const kResponseLoginBoxForAuth = 'response_login_box_for_auth';
+const kLoginBox = 'response_login_box_to_get_user';
+const kOfBoxAuth = 'user';
+const kOfBoxLogin = 'userForLogin';

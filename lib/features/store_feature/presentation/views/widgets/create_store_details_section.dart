@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
 
 import '../../../../../core/utils/colors.dart';
@@ -34,10 +35,18 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
   ];
 
   @override
+  void dispose() {
+    for (var controller in textControllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: Padding(
-        padding: const EdgeInsets.only(top: 200),
+        padding: const EdgeInsets.only(top: 220),
         child: Container(
           color: AssetsColors.white,
           child: SingleChildScrollView(
@@ -58,7 +67,7 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
                   const CustomTextFieldInputChip(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustonButton(
+                    child: CustomButton(
                       onPressed: () {
                         /// this for loop to test the controller
                         for (int i = 0; i < textControllers.length; i++) {
