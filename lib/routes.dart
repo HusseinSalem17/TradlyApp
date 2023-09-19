@@ -5,6 +5,7 @@ import 'package:tradly_app/features/auth_feature/presentation/manager/user_cubit
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 
 import 'package:tradly_app/features/store_feature/presentation/views/create_store_screen.dart';
 
@@ -22,7 +23,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 //----- Main Routing -----
     case '/':
-      return  splashRoute();
+      return splashRoute();
 
 //----- Auth Routing -----
     case SignUpScreen.routeName:
@@ -46,6 +47,10 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
       return storeRoute();
     case CreateStoreScreen.routeName:
       return createStoreRoute();
+    case CreatedStoreScreen.routeName:
+      return createdStoreScreen();
+    case AddProductScreen.routeName:
+      return addProductScreen();
 
     /// the productDetailScreen not have a logic yet now !!!!
     // case ProductDetailsScreen.routeName:
@@ -116,5 +121,29 @@ MaterialPageRoute<dynamic> verifyRoute(int verifyId, User user) {
       verifyId: verifyId,
       user: user,
     ),
+  );
+}
+
+MaterialPageRoute<dynamic> storeScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const StoreScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> createStoreScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const CreateStoreScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> createdStoreScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const CreatedStoreScreen(),
+  );
+}
+
+MaterialPageRoute<dynamic> addProductScreen() {
+  return MaterialPageRoute(
+    builder: (context) => const AddProductScreen(),
   );
 }

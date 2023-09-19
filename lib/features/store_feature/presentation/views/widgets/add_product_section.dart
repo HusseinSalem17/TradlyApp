@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
 
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
@@ -10,21 +11,23 @@ class AddProductSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size =MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.4,
       child: Column(
         children: [
-          SizedBox(height: size.height*0.08),
+          SizedBox(height: size.height * 0.08),
           Text(
             'You don\'t have product',
             style: Styles.textStyleMedium18.copyWith(
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: size.height*0.06),
+          SizedBox(height: size.height * 0.06),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(AddProductScreen.routeName);
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 77),
               child: Container(
