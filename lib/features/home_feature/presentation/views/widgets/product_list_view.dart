@@ -33,8 +33,9 @@ class ProductListView extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: Styles.textStyleMedium18.copyWith(
+                  style: Styles.textStyleBold26.copyWith(
                     fontWeight: FontWeight.bold,
+                    fontSize: 22,
                   ),
                 ),
                 const Spacer(),

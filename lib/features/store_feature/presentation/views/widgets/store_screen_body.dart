@@ -6,8 +6,8 @@ import 'package:tradly_app/features/store_feature/presentation/views/widgets/cus
 import '../../../../../core/utils/text_styles.dart';
 import '../create_store_screen.dart';
 
-class BodyOfStoreScreen extends StatelessWidget {
-  const BodyOfStoreScreen({
+class StoreScreenBody extends StatelessWidget {
+  const StoreScreenBody({
     super.key,
   });
 

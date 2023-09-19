@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
 
 class BrowseButton extends StatelessWidget {
@@ -21,7 +20,7 @@ class BrowseButton extends StatelessWidget {
       icon: icon,
       label: Text(title, style: Styles.textStyleRegular14),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.red,
+        //shadowColor: Colors.white ,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
@@ -33,3 +32,4 @@ class BrowseButton extends StatelessWidget {
     );
   }
 }
+//chip

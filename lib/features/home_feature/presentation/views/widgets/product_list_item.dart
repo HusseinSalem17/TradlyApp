@@ -12,9 +12,11 @@ class ProductListItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 6),
       child: Container(
+
         height: 300,
         width: MediaQuery.of(context).size.width * 0.4,
         decoration: BoxDecoration(
+          color: Colors.white,
           border: Border.all(color: Colors.black26),
           borderRadius: BorderRadius.circular(10),
         ),
