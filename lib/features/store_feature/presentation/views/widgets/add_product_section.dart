@@ -5,7 +5,6 @@ import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 
 class AddProductSection extends StatelessWidget {
-  static const routeName = 'add-product-screen';
   const AddProductSection({
     super.key,
   });

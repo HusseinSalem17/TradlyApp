@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
-
 class StoreCustomButton extends StatelessWidget {
   final String buttonTitle;
   final Color textColor;
@@ -13,6 +12,7 @@ class StoreCustomButton extends StatelessWidget {
     required this.buttonTitle,
     required this.textColor,
     required this.backgroundColor,
+
   });
 
   @override

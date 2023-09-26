@@ -17,10 +17,17 @@ class CreateStoreScreen extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'My Store',
       ),
-      body: Stack(
-        children: [
-          LogoSection(),
-          CreateStoreDetailsSection(),
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                LogoSection(),
+                CreateStoreDetailsSection(),
+              ],
+            ),
+          )
         ],
       ),
     );

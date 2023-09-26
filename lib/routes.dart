@@ -50,9 +50,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 //----- Store Routing -----
     case StoreScreen.routeName:
-      return storeRoute();
+      return storeScreen();
     case CreateStoreScreen.routeName:
-      return createStoreRoute();
+      return createStoreScreen();
     case CreatedStoreScreen.routeName:
       return createdStoreScreen();
     case AddProductScreen.routeName:
@@ -103,17 +103,6 @@ MaterialPageRoute<dynamic> loginRoute() {
   );
 }
 
-MaterialPageRoute<dynamic> createStoreRoute() {
-  return MaterialPageRoute(
-    builder: (context) => const CreateStoreScreen(),
-  );
-}
-
-MaterialPageRoute<dynamic> storeRoute() {
-  return MaterialPageRoute(
-    builder: (context) => const StoreScreen(),
-  );
-}
 
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
-
 class CustomAddPhotosButton extends StatelessWidget {
   const CustomAddPhotosButton({
     Key? key,

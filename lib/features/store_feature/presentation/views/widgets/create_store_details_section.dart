@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
+
 import '../../../../../core/utils/colors.dart';
+import 'custom_text_field_input_chip.dart';
 import 'custom_text_form_field.dart';
 
 class CreateStoreDetailsSection extends StatefulWidget {
@@ -40,43 +43,46 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned.fill(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 220),
-        child: Container(
-          color: AssetsColors.white,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  ...List.generate(
-                    8,
-                    (index) {
-                      return CustomTextFormField(
-                        labelText: textFormFiledLabels[index],
-                        textFormController: textControllers[index],
-                      );
-                    },
-                  ),
-                  //const CustomTextFieldInputChip(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: CustomButton(
-                      onPressed: () {
-                        /// this for loop to test the controller
-                        for (int i = 0; i < textControllers.length; i++) {
-                          print(
-                              'Field ${i + 1}: ${textControllers[i].text.trim()}');
-                        }
-                      },
-                      text: 'Create',
-                    ),
-                  ),
-                ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Container(
+        color: AssetsColors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              ...List.generate(
+                8,
+                (index) {
+                  return CustomTextFormField(
+                    labelText: textFormFiledLabels[index],
+                    textFormController: textControllers[index],
+                  );
+                },
               ),
-            ),
+              CustomTextFieldInputChip(
+                textEditingController: controller,
+                labelText: 'Tagline',
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: CustomButton(
+                  onPressed: () {
+                    /// this for loop to test the controller
+                    for (int i = 0; i < textControllers.length; i++) {
+                      print(
+                          'Field ${i + 1}: ${textControllers[i].text.trim()}');
+                    }
+                    print(controller.text);
+                    Navigator.pushNamed(
+                      context,
+                      CreatedStoreScreen.routeName,
+                    );
+                  },
+                  text: 'Create',
+                ),
+              ),
+            ],
           ),
         ),
       ),
