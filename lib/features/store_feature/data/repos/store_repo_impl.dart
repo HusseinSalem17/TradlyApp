@@ -14,11 +14,11 @@ class StoreRepoImpl extends StoreRepo {
   StoreRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, ResponseRegister>> createStore({
+  Future<Either<Failure, CreateStoreModel>> createStore({
     required CreateStoreModel data,
   }) async {
     try {
-      var response = ResponseRegister.fromJson(
+      var response = CreateStoreModel.fromJson(
         await apiService.post(
           endPoint: 'v1/accounts',
           data: data.toJson(),

@@ -5,7 +5,7 @@ import '../../../auth_feature/data/models/response/response_register/response_re
 import '../models/create_store_model/create_store_model.dart';
 
 abstract class StoreRepo {
-  Future<Either<Failure, ResponseRegister>> createStore({
+  Future<Either<Failure, CreateStoreModel>> createStore({
     required CreateStoreModel data,
   });
 }
