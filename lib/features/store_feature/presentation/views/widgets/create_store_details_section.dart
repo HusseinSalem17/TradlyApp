@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/utils/text_styles.dart';
-import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
-
 import '../../../../../core/utils/colors.dart';
-import 'custom_text_field_input_chip.dart';
 import 'custom_text_form_field.dart';
 
 class CreateStoreDetailsSection extends StatefulWidget {
@@ -64,7 +60,7 @@ class _CreateStoreDetailsSectionState extends State<CreateStoreDetailsSection> {
                       );
                     },
                   ),
-                  const CustomTextFieldInputChip(),
+                  //const CustomTextFieldInputChip(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: CustomButton(

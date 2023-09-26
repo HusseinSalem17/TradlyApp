@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
 
 class AddProductScreen extends StatelessWidget {
+  static const routeName = 'add-product-screen';
   const AddProductScreen({Key? key}) : super(key: key);
 
   @override

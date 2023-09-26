@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tradly_app/core/models/product_model.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/presentation/manager/user_cubit/add_user_cubit.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
+import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_item.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
+import 'package:tradly_app/features/product_detailes_feature/presentation/views/product_detail_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 
@@ -23,7 +26,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 //----- Main Routing -----
     case '/':
-      return splashRoute();
+      return homeRoute();
 
 //----- Auth Routing -----
     case SignUpScreen.routeName:
@@ -41,6 +44,9 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 //----- Home Routing -----
     case HomeScreen.routeName:
       return homeRoute();
+    case ProductDetailsScreen.routeName:
+      final ProductModel args = settings.arguments as ProductModel;
+      return productDetailRoute(args);
 
 //----- Store Routing -----
     case StoreScreen.routeName:
@@ -145,5 +151,11 @@ MaterialPageRoute<dynamic> createdStoreScreen() {
 MaterialPageRoute<dynamic> addProductScreen() {
   return MaterialPageRoute(
     builder: (context) => const AddProductScreen(),
+  );
+}
+
+MaterialPageRoute<ProductModel> productDetailRoute(ProductModel model) {
+  return MaterialPageRoute(
+    builder: (context) => ProductDetailsScreen(model: model),
   );
 }

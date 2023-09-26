@@ -4,7 +4,7 @@ class ProductIcon extends StatelessWidget {
   const ProductIcon({super.key, required this.icon, this.onPressed});
 
   final IconData icon;
-  final void Function()? onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
