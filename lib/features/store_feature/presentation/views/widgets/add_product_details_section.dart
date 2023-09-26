@@ -6,6 +6,7 @@ import '../created_store_screen.dart';
 import 'custom_text_field_input_chip.dart';
 import 'custom_text_form_field.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';
+
 class AddProductDetailsSection extends StatefulWidget {
   const AddProductDetailsSection({
     super.key,
@@ -20,7 +21,7 @@ class _AddProductDetailsSectionState extends State<AddProductDetailsSection> {
   TextEditingController controller = TextEditingController();
   final List<TextEditingController> textControllers = List.generate(
     7,
-        (index) => TextEditingController(),
+    (index) => TextEditingController(),
   );
 
   @override

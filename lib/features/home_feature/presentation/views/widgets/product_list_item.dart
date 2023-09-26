@@ -5,20 +5,20 @@ import '../../../../../core/utils/colors.dart';
 
 class ProductListItem extends StatelessWidget {
   const ProductListItem({super.key, required this.model});
-static const routeName = '/product-item';
+
+  static const routeName = '/product-item';
   final ProductModel model;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:(){
-        Navigator.pushNamed(
-                                  context, ProductDetailsScreen.routeName,arguments: model);
+      onTap: () {
+        Navigator.pushNamed(context, ProductDetailsScreen.routeName,
+            arguments: model);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 6),
         child: Container(
-    
           height: 300,
           width: MediaQuery.of(context).size.width * 0.4,
           decoration: BoxDecoration(

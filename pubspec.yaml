@@ -50,6 +50,7 @@ dependencies:
   url_launcher: ^6.1.12
   uuid: ^4.0.0
   dotted_border: ^2.0.0+3
+  image_picker: ^1.0.4
 
 dev_dependencies:
   build_runner: ^2.3.3

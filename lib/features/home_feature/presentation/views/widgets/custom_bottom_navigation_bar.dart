@@ -9,7 +9,8 @@ class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
-  State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
@@ -53,10 +54,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         setState(() {
           BlocProvider.of<HomeCubit>(context).getCurrentIndex(index);
         });
-
       },
       fixedColor: AssetsColors.kSecondaryColor,
-      type:BottomNavigationBarType.fixed,
+      type: BottomNavigationBarType.fixed,
       unselectedItemColor: Colors.grey,
       showUnselectedLabels: true,
     );

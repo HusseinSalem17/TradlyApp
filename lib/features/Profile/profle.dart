@@ -29,7 +29,9 @@ class UserProfile extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 3,
             child: Column(
               children: [
-                const SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 Row(
                   children: [
                     const Spacer(flex: 1),

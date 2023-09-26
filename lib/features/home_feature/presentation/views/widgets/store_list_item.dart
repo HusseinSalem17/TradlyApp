@@ -45,4 +45,3 @@ class StoreListItem extends StatelessWidget {
     );
   }
 }
-

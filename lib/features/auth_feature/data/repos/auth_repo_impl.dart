@@ -77,8 +77,8 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<Failure, ResponseLogin>> verifyOTP(
-      {required RequestVerify data}) async{
-        try {
+      {required RequestVerify data}) async {
+    try {
       var response = ResponseLogin.fromJson(
         await apiService.post(
           endPoint: 'v1/users/verify',

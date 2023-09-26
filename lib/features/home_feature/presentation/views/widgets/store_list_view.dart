@@ -17,7 +17,7 @@ class StoreListView extends StatelessWidget {
           Container(
             color: AssetsColors.kSecondaryColor,
             height: 184,
-            child:  Padding(
+            child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,9 +25,7 @@ class StoreListView extends StatelessWidget {
                   Text(
                     'Store to follow',
                     style: Styles.textStyleMedium18.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: AssetsColors.white
-                    ),
+                        fontWeight: FontWeight.bold, color: AssetsColors.white),
                   ),
                   const Spacer(),
                   const CustomButton(
