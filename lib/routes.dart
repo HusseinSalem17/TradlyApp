@@ -103,7 +103,6 @@ MaterialPageRoute<dynamic> loginRoute() {
   );
 }
 
-
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
     builder: (context) => const HomeScreen(),

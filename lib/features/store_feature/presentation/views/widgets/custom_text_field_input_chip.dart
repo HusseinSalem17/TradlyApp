@@ -65,7 +65,7 @@ class _CustomTextFieldInputChipState extends State<CustomTextFieldInputChip> {
               // Filter available chips based on user input
               availableChips = PopularTaglineWords.popularWords
                   .where((word) =>
-                  word.toLowerCase().startsWith(value.toLowerCase()))
+                      word.toLowerCase().startsWith(value.toLowerCase()))
                   .toList();
               if (availableChips.isNotEmpty &&
                   widget.textEditingController.text.isNotEmpty) {

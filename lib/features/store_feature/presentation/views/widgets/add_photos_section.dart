@@ -4,6 +4,7 @@ import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 import 'custom_add_photo_button.dart';
 import 'custom_add_product_photo_card.dart';
+
 class AddPhotosSection extends StatelessWidget {
   const AddPhotosSection({
     super.key,
@@ -19,7 +20,7 @@ class AddPhotosSection extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-             const Row(
+            const Row(
               children: [
                 CustomAddPhotosButton(),
                 SizedBox(width: 15),

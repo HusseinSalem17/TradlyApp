@@ -55,8 +55,8 @@ class ProductDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(model.name,
-                        style: Styles.textStyleMedium20
-                            .copyWith(color: Colors.black,fontWeight: FontWeight.w600)),
+                        style: Styles.textStyleMedium20.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.w600)),
                     const Spacer(flex: 1),
                     Text(model.price,
                         style: Styles.textStyleMedium24
@@ -143,9 +143,11 @@ class ProductDetailsScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Additional Details',
-                      style: Styles.textStyleMedium20.copyWith(color: Colors.black),
+                      style: Styles.textStyleMedium20
+                          .copyWith(color: Colors.black),
                     ),
-                    TextRow(title: 'Delivery Details', type: model.deliveryDetails),
+                    TextRow(
+                        title: 'Delivery Details', type: model.deliveryDetails),
                   ],
                 ),
               ))

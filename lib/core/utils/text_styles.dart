@@ -58,7 +58,7 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
     fontFamily: kMontserrat,
   );
-  
+
   static const textStyleMedium30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.w500,
