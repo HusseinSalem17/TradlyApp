@@ -45,7 +45,6 @@ class _VerifyViewState extends State<VerifyView> {
         body: BlocConsumer<VerifyCubit, VerifyState>(
           listener: (context, state) {
             if (state is VerifySuccess) {
-              BlocProvider.of<UserCubit>(context).login(user: widget.user);
               BlocProvider.of<UserCubit>(context)
                   .addUserWithAuth(user: state.response);
               Navigator.pushReplacementNamed(context, HomeScreen.routeName);

@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../../core/utils/colors.dart';
-import '../../../data/models/request_verify/request_verify.dart';
-import '../../manager/verify_cubit/verify_cubit.dart';
 
 class CustomPinCodeTextField extends StatelessWidget {
   const CustomPinCodeTextField({

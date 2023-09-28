@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/utils/colors.dart';
-import '../created_store_screen.dart';
 import 'custom_text_field_input_chip.dart';
 import 'custom_text_form_field.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_button.dart';

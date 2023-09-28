@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/widgets/indicator.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/widgets/onboarding_content.dart';
-import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/login_screen.dart';
 
 import 'package:tradly_app/features/onboarding_screen/data/models/onboard_model.dart';

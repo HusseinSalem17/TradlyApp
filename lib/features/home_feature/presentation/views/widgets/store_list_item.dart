@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tradly_app/core/models/store_model.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
 import 'package:tradly_app/features/onboarding_screen/data/models/store_data.dart';
 

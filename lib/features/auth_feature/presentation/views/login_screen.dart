@@ -45,7 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
-            BlocProvider.of<UserCubit>(context).login(user: user);
+            BlocProvider.of<UserCubit>(context)
+                .addUserWithAuth(user: state.response);
             Navigator.pushReplacementNamed(context, HomeScreen.routeName);
           } else if (state is LoginFailure) {
             if (state.errMessage == 'user not registered') {
