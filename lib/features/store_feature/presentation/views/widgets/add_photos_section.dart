@@ -33,7 +33,7 @@ class AddPhotosSection extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 16),
                 child: Text(
                   'Max. 4 photos per product',
-                  style: Styles.textStyleNormal14.copyWith(
+                  style: Styles.textStyleRegular14.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AssetsColors.kTextGrey,
                     fontSize: 14,

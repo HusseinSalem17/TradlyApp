@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/colors.dart';
-import 'package:tradly_app/features/Order_history_feature/order_history_view.dart';
-import 'package:tradly_app/features/Profile/profle.dart';
+import 'package:tradly_app/features/order_history_feature/order_history_view.dart';
+import 'package:tradly_app/features/profile_feature/profle.dart';
 import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/home_body.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/custom_bottom_navigation_bar.dart';

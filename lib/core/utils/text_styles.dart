@@ -5,11 +5,16 @@ import 'package:tradly_app/core/utils/colors.dart';
 const kMontserrat = 'Montserrat';
 
 abstract class Styles {
-  static const textStyleNormal14 = TextStyle(
+  static const errorTextStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.red,
+  );
+  static const textStyleMedium14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
     fontFamily: kMontserrat,
-    color: AssetsColors.white,
+    color: AssetsColors.kPrimaryTextColor,
   );
   static const textStyleBold10 = TextStyle(
     fontSize: 10,

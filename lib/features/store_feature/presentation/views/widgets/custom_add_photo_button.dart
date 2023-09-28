@@ -35,7 +35,7 @@ class CustomAddPhotosButton extends StatelessWidget {
               ),
               Text(
                 'Add photos',
-                style: Styles.textStyleNormal14.copyWith(
+                style: Styles.textStyleRegular14.copyWith(
                   fontWeight: FontWeight.w600,
                   color: AssetsColors.kPrimaryTextColor,
                 ),

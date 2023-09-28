@@ -8,11 +8,34 @@ class CustomErrorWidget extends StatelessWidget {
   final String errMessage;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        errMessage,
-        style: Styles.textStyleMedium18,
-        textAlign: TextAlign.center,
+    // return error Toast Widget with error message using ScaffoldMassenger
+    return ScaffoldMessenger(
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                errMessage,
+                style: Styles.errorTextStyle,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+              icon: const Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

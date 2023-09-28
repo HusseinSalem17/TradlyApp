@@ -9,14 +9,14 @@ class CustomAppBarWithActions extends StatelessWidget
   @override
   Size get preferredSize => const Size.fromHeight(65);
   final String title;
-  final Function() onTapFavoriteIcon;
-  final Function() onTapCartIcon;
+  final Function()? onTapFavoriteIcon;
+  final Function()? onTapCartIcon;
 
   const CustomAppBarWithActions({
     super.key,
     required this.title,
-    required this.onTapFavoriteIcon,
-    required this.onTapCartIcon,
+    this.onTapFavoriteIcon,
+    this.onTapCartIcon,
   });
 
   @override

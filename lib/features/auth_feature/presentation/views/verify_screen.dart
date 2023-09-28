@@ -11,7 +11,7 @@ import 'package:tradly_app/features/auth_feature/presentation/views/widgets/cust
 import '../../../../core/widgets/custom_error_widget.dart';
 import '../../../../core/widgets/custom_loading_indicator.dart';
 import '../../../home_feature/presentation/views/home_screen.dart';
-import '../manager/user_cubit/add_user_cubit.dart';
+import '../manager/user_cubit/user_cubit.dart';
 
 class VerifyView extends StatefulWidget {
   static const routeName = '/OTP-screen';
@@ -45,9 +45,8 @@ class _VerifyViewState extends State<VerifyView> {
         body: BlocConsumer<VerifyCubit, VerifyState>(
           listener: (context, state) {
             if (state is VerifySuccess) {
-              BlocProvider.of<AddUserCubit>(context)
-                  .addUserForLogin(user: widget.user);
-              BlocProvider.of<AddUserCubit>(context)
+              BlocProvider.of<UserCubit>(context).login(user: widget.user);
+              BlocProvider.of<UserCubit>(context)
                   .addUserWithAuth(user: state.response);
               Navigator.pushReplacementNamed(context, HomeScreen.routeName);
             }

@@ -30,22 +30,32 @@ class ServerFailure extends Failure {
         if (dioException.message!.contains('SocketExcetpion')) {
           return ServerFailure('No Internet Connection');
         }
-        return ServerFailure('Unexpected Error, Please try again !');
+        return ServerFailure(
+            'Unexpected Error, Please try again ! ${dioException.response!.data}}');
       default:
-        return ServerFailure('Opps There was an Error, Please try again');
+        return ServerFailure(
+            'Opps There was an Error, Please try again ${dioException.response!.data}');
     }
   }
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+    // add the case of the user is registered before (the status code of registered user is 409)
+    if (statusCode == 400 ||
+        statusCode == 401 ||
+        statusCode == 403 ||
+        statusCode == 409 ||
+        statusCode == 412) {
       return ServerFailure(response['error']['message']);
     } else if (statusCode == 404) {
       //not found
-      return ServerFailure('Your request not found, Please try again later!');
+      return ServerFailure(
+          'Your request not found, Please try again later! $statusCode');
     } else if (statusCode == 500) {
       //problem in server
-      return ServerFailure('Internal Server error, Please try later!');
+      return ServerFailure(
+          'Internal Server error, Please try later! $statusCode');
     } else {
-      return ServerFailure('Opps There was an Error, Please try again');
+      return ServerFailure(
+          'Opps There was an Error, Please try again $statusCode');
     }
   }
 }

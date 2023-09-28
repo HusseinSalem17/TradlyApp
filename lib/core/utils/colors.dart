@@ -9,4 +9,6 @@ abstract class AssetsColors {
   static const priceColor = Color(0xff33907C);
   static const white = Color(0xffFFFFFF);
   static const black = Colors.black;
+  static const backgroundGroundColor = Color(0xffF6F9FF);
+  static const errColor = Color(0xffFF0000);
 }
