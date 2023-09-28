@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tradly_app/core/utils/colors.dart';
-import 'package:tradly_app/core/widgets/custom_app_bar.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
 import 'package:tradly_app/features/browse_feature/presentation/view/widgets/browse_bar.dart';
-
 import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_item.dart';
+import 'package:tradly_app/features/wish_list/view/wishList.dart';
 //import 'package:tradly_app/features/store_feature/presentation/views/widgets/custom_app_bar.dart';
 
 class BrowseScreen extends StatelessWidget {
@@ -22,6 +20,8 @@ class BrowseScreen extends StatelessWidget {
           print('onTapCartIcon');
         },
         onTapFavoriteIcon: () {
+          Navigator.pushNamed(context, WishList.routeName);
+
           print('onTapFavoriteIcon');
         },
       ),

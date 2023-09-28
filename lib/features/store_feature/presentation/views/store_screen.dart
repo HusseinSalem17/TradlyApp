@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/widgets/store_screen_body.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
+import 'package:tradly_app/features/wish_list/view/wishList.dart';
 
 class StoreScreen extends StatelessWidget {
   static const routeName = '/store-screen';
@@ -16,6 +17,7 @@ class StoreScreen extends StatelessWidget {
           print('onTapCartIcon');
         },
         onTapFavoriteIcon: () {
+          Navigator.pushNamed(context, WishList.routeName);
           print('onTapFavoriteIcon');
         },
       ),

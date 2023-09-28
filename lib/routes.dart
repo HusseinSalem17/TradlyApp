@@ -11,6 +11,7 @@ import 'package:tradly_app/features/store_feature/presentation/views/add_product
 import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
 
 import 'package:tradly_app/features/store_feature/presentation/views/create_store_screen.dart';
+import 'package:tradly_app/features/wish_list/view/wishList.dart';
 
 import 'features/auth_feature/presentation/views/login_screen.dart';
 import 'features/auth_feature/presentation/views/signup_screen.dart';
@@ -47,7 +48,8 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
     case ProductDetailsScreen.routeName:
       final ProductModel args = settings.arguments as ProductModel;
       return productDetailRoute(args);
-
+    case WishList.routeName:
+      return wishListRoute();
 //----- Store Routing -----
     case StoreScreen.routeName:
       return storeScreen();
@@ -106,6 +108,11 @@ MaterialPageRoute<dynamic> loginRoute() {
 MaterialPageRoute<dynamic> homeRoute() {
   return MaterialPageRoute(
     builder: (context) => const HomeScreen(),
+  );
+}
+MaterialPageRoute<dynamic> wishListRoute() {
+  return MaterialPageRoute(
+    builder: (context) => const WishList(),
   );
 }
 

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/features/Profile/widgets/profile_menu.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
+import 'package:tradly_app/features/wish_list/view/wishList.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
@@ -16,10 +17,11 @@ class UserProfile extends StatelessWidget {
       appBar: CustomAppBarWithActions(
         title: 'Profile',
         onTapCartIcon: () {
-          print('onTapCartIcon');
+          debugPrint('onTapCartIcon');
         },
         onTapFavoriteIcon: () {
-          print('onTapFavoriteIcon');
+          Navigator.pushNamed(context, WishList.routeName);
+          debugPrint('onTapFavoriteIcon');
         },
       ),
       body: Stack(
