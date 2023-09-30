@@ -1,21 +1,12 @@
 import 'package:hive/hive.dart';
-part 'user.g.dart';
 
-@HiveType(typeId: 1)
 class User extends HiveObject {
-  @HiveField(0)
   String uuid;
-  @HiveField(1)
   String? firstName;
-  @HiveField(2)
   String? lastName;
-  @HiveField(3)
   String? email;
-  @HiveField(4)
   String? password;
-  @HiveField(5)
   String? dialCode;
-  @HiveField(6)
   String? type;
 
   User({

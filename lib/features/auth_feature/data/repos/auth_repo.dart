@@ -18,4 +18,9 @@ abstract class AuthRepo {
   Future<Either<Failure, ResponseLogin>> verifyOTP({
     required RequestVerify data,
   });
+
+  Future<Either<Failure,Map<String,dynamic>>> logout({
+    required String uuid,
+    required String authKey,
+  });
 }

@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:tradly_app/constants.dart';
-
 import 'package:tradly_app/core/utils/app_theme.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/functions/service_locator.dart';
-import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/data/repos/auth_repo_impl.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/login_cubit/login_cubit.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/register_cubit/register_cubit.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/user_cubit/user_cubit.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/verify_cubit/verify_cubit.dart';
 import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:tradly_app/routes.dart';
-
-import 'features/auth_feature/data/models/response/response_login/response_login.dart';
+import 'features/auth_feature/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'features/auth_feature/presentation/manager/user_hive_cubit/user_cubit.dart';
 
 void main() async {
   setupServiceLocator();
@@ -24,16 +16,10 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: AssetsColors.kSecondaryColor,
   ));
-  //Init Hive
-  await Hive.initFlutter();
-  Hive.registerAdapter(ResponseLoginAdapter());
-  Hive.registerAdapter(UserAdapter());
-  await Hive.openBox<ResponseLogin>(kResponseLoginBoxForAuth);
-  await Hive.openBox<User>(kLoginBox);
   // run app with BlocProvider of UserCubit
   runApp(
-    BlocProvider<UserCubit>(
-      create: (context) => UserCubit(),
+    BlocProvider<UserHiveCubit>(
+      create: (context) => UserHiveCubit(getIt.get<AuthRepoImpl>()),
       child: const TradlyApp(),
     ),
   );
@@ -47,13 +33,7 @@ class TradlyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => RegisterCubit(getIt.get<AuthRepoImpl>()),
-        ),
-        BlocProvider(
-          create: (context) => LoginCubit(getIt.get<AuthRepoImpl>()),
-        ),
-        BlocProvider(
-          create: (context) => VerifyCubit(getIt.get<AuthRepoImpl>()),
+          create: (context) => AuthCubit(getIt.get<AuthRepoImpl>()),
         ),
         BlocProvider(
           create: (context) => HomeCubit(),

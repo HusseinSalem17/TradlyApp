@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar_with_actions.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/user_cubit/user_cubit.dart';
+import 'package:tradly_app/core/widgets/custom_show_toast.dart';
 import 'package:tradly_app/features/profile_feature/widgets/profile_menu.dart';
 
+import '../auth_feature/presentation/manager/auth_cubit/auth_cubit.dart';
 import '../auth_feature/presentation/views/login_screen.dart';
 
 class UserProfile extends StatelessWidget {
@@ -16,27 +17,29 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AssetsColors.backgroundGroundColor,
-      appBar: CustomAppBarWithActions(
-        title: 'Profile',
-        onTapCartIcon: () {
-          print('onTapCartIcon');
-        },
-        onTapFavoriteIcon: () {
-          print('onTapFavoriteIcon');
-        },
-      ),
-      body:BlocListener<UserCubit, UserState>(
-        listener: (context, state) {
-          if (state is Logout) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              LoginScreen.routeName,
-              (route) => false,
-            );
-          }
-        },
-        child:  Stack(
+        backgroundColor: AssetsColors.backgroundGroundColor,
+        appBar: CustomAppBarWithActions(
+          title: 'Profile',
+          onTapCartIcon: () {
+            print('onTapCartIcon');
+          },
+          onTapFavoriteIcon: () {
+            print('onTapFavoriteIcon');
+          },
+        ),
+        body: BlocListener<AuthCubit, AuthState>(
+          listener: (context, state) {
+            if (state is AuthSuccess) {
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                LoginScreen.routeName,
+                (route) => false,
+              );
+            } else if (state is AuthFailure) {
+              showToast(errorMessage: state.errMessage);
+            }
+          },
+          child: Stack(
             children: [
               Container(
                 color: AssetsColors.kSecondaryColor,
@@ -80,7 +83,6 @@ class UserProfile extends StatelessWidget {
               )
             ],
           ),
-      )
-    );
+        ));
   }
 }

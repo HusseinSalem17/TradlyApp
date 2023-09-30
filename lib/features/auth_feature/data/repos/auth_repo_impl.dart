@@ -104,4 +104,33 @@ class AuthRepoImpl implements AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, Map<String, dynamic>>> logout(
+      {required String uuid, required String authKey}) async {
+    try {
+      var response = await apiService.post(
+        data: {"uuid": uuid},
+        endPoint: 'v1/users/logout',
+        headers: {
+          "Authorization": publishable_key,
+          "Content-Type": "application/json",
+          "x-auth-key": authKey,
+        },
+      );
+      return right(response);
+    } catch (e) {
+      //if i had status code not 200 right (throw dio error)
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+      return left(
+        ServerFailure(
+          e.toString(),
+        ),
+      );
+    }
+  }
 }

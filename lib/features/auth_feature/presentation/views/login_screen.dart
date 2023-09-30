@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tradly_app/core/utils/colors.dart';
-import 'package:tradly_app/features/auth_feature/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/signup_screen.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_auth_button.dart';
 import 'package:uuid/uuid.dart';
-
 import '../../../../core/utils/text_styles.dart';
+import '../../../../core/widgets/custom_show_toast.dart';
 import '../../../home_feature/presentation/views/home_screen.dart';
 import '../../data/models/auth/auth.dart';
 import '../../data/models/auth/user.dart';
-import '../manager/user_cubit/user_cubit.dart';
+import '../manager/auth_cubit/auth_cubit.dart';
+import '../manager/user_hive_cubit/user_cubit.dart';
 import 'widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -40,25 +39,21 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     late User user;
     String? errorMessage;
+    String? id;
     return Scaffold(
       backgroundColor: AssetsColors.kSecondaryColor,
-      body: BlocConsumer<LoginCubit, LoginState>(
+      body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state is LoginSuccess) {
-            BlocProvider.of<UserCubit>(context)
+          if (state is AuthSuccess) {
+            BlocProvider.of<UserHiveCubit>(context).uuid = id;
+            BlocProvider.of<UserHiveCubit>(context)
                 .addUserWithAuth(user: state.response);
             Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-          } else if (state is LoginFailure) {
+          } else if (state is AuthFailure) {
             if (state.errMessage == 'user not registered') {
               errorMessage = state.errMessage;
             } else {
-              Fluttertoast.showToast(
-                msg: state.errMessage,
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                backgroundColor: AssetsColors.white,
-                textColor: AssetsColors.errColor,
-              );
+              showToast(errorMessage: state.errMessage);
             }
           }
         },
@@ -119,15 +114,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           ? null // Disable the button if the fields are empty
                           : () {
                               if (_formKey.currentState!.validate()) {
-                                String id = const Uuid().v1();
+                                id = const Uuid().v1();
                                 user = User(
-                                  uuid: id,
+                                  uuid: id!,
                                   email: emailController.text,
-                                  password: emailController.text,
+                                  password: passwordController.text,
                                   type: 'customer',
                                 );
                                 Auth data = Auth(user: user);
-                                BlocProvider.of<LoginCubit>(context)
+                                BlocProvider.of<AuthCubit>(context)
                                     .login(data: data);
                               }
                             },

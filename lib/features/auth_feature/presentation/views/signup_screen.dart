@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tradly_app/core/utils/colors.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
+import 'package:tradly_app/core/widgets/custom_show_toast.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/widgets/custom_auth_button.dart';
@@ -11,7 +11,8 @@ import 'package:uuid/uuid.dart';
 
 import '../../../../core/utils/functions/validators.dart';
 import '../../data/models/auth/auth.dart';
-import '../manager/register_cubit/register_cubit.dart';
+import '../manager/auth_cubit/auth_cubit.dart';
+import '../manager/user_hive_cubit/user_cubit.dart';
 import 'widgets/custom_text_field.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -49,27 +50,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     late User user;
     String? errorMessage;
+    String? id;
     return Scaffold(
       backgroundColor: AssetsColors.kSecondaryColor,
-      body: BlocConsumer<RegisterCubit, RegisterState>(
+      body: BlocConsumer<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state is RegisterSuccess) {
+          if (state is AuthSuccess) {
+            BlocProvider.of<UserHiveCubit>(context).uuid = id;
             Navigator.pushNamed(
               context,
               VerifyView.routeName,
               arguments: [state.response.data!.verifyId, user],
             );
-          } else if (state is RegisterFailure) {
+          } else if (state is AuthFailure) {
             if (state.errMessage == 'User already exists') {
               errorMessage = state.errMessage;
             } else {
-              Fluttertoast.showToast(
-                msg: state.errMessage,
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                backgroundColor: AssetsColors.white,
-                textColor: AssetsColors.errColor,
-              );
+              showToast(errorMessage: state.errMessage);
             }
           }
         },
@@ -167,14 +164,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     const SizedBox(height: 20),
                     CustomAuthButton(
                       text: 'Create',
-                      isLogin: false,
                       onPressed: isButtonDisabled
                           ? null
                           : () {
                               if (_formKey.currentState!.validate()) {
-                                String id = const Uuid().v1();
+                                id = const Uuid().v1();
                                 user = User(
-                                  uuid: id,
+                                  uuid: id!,
                                   firstName: firstNameController.text,
                                   lastName: lastNameController.text,
                                   email: emailController.text,
@@ -182,7 +178,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   type: 'customer',
                                 );
                                 Auth data = Auth(user: user);
-                                BlocProvider.of<RegisterCubit>(context)
+                                BlocProvider.of<AuthCubit>(context)
                                     .register(data: data);
                               }
                             },

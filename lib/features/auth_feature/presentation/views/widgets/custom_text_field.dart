@@ -86,9 +86,11 @@ class CustomTextFieldState extends State<CustomTextField> {
       validator: (value) {
         if (widget.keyboardType == TextInputType.emailAddress) {
           return validateEmail(value);
-        } else if (widget.keyboardType == TextInputType.visiblePassword) {
-          return validatePassword(value);
-        } else {
+        }
+        // else  if (widget.keyboardType == TextInputType.visiblePassword) {
+        //   return validatePassword(value);
+        // }
+        else {
           return null;
         }
       },

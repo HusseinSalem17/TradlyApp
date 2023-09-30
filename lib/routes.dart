@@ -24,7 +24,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 //----- Main Routing -----
     case '/':
-      return homeRoute();
+      return splashRoute();
 
 //----- Auth Routing -----
     case SignUpScreen.routeName:
@@ -107,6 +107,7 @@ MaterialPageRoute<dynamic> homeRoute() {
     builder: (context) => const HomeScreen(),
   );
 }
+
 MaterialPageRoute<dynamic> wishListRoute() {
   return MaterialPageRoute(
     builder: (context) => const WishList(),

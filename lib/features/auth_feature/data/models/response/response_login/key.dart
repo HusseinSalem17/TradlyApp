@@ -1,5 +1,12 @@
+import 'package:hive/hive.dart';
+
+part 'key.g.dart';
+
+@HiveType(typeId: 3)
 class Key {
+  @HiveField(0)
   String? authKey;
+  @HiveField(1)
   String? refreshKey;
 
   Key({this.authKey, this.refreshKey});

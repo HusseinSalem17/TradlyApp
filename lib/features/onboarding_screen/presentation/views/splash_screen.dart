@@ -8,7 +8,7 @@ import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoard
 import '../../../../core/utils/colors.dart';
 import '../../../../core/utils/image_assets.dart';
 import '../../../../core/utils/text_styles.dart';
-import '../../../auth_feature/presentation/manager/user_cubit/user_cubit.dart';
+import '../../../auth_feature/presentation/manager/user_hive_cubit/user_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(const Duration(seconds: 2), () {
       final bool authenticationBloc =
-          BlocProvider.of<UserCubit>(context).checkLogged();
+          BlocProvider.of<UserHiveCubit>(context).checkLogged();
       if (authenticationBloc == true) {
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
       } else {

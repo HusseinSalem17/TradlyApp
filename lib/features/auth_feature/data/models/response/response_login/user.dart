@@ -1,12 +1,23 @@
-import 'key.dart';
+import 'package:hive/hive.dart';
 
+import 'key.dart';
+part 'user.g.dart';
+
+@HiveType(typeId: 2)
 class User {
+  @HiveField(0)
   String? id;
+  @HiveField(1)
   String? firstName;
+  @HiveField(2)
   String? lastName;
+  @HiveField(3)
   String? email;
+  @HiveField(4)
   String? profilePic;
+  @HiveField(5)
   bool? emailVerified;
+  @HiveField(6)
   Key? key;
 
   User({

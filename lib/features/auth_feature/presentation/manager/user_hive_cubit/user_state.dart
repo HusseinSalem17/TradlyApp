@@ -29,4 +29,12 @@ class UserFailure extends UserState {
   const UserFailure(this.errMessage);
 }
 
-class Logout extends UserState {}
+class LogoutSuccess extends UserState {}
+
+class LogoutFailure extends UserState {
+  final String errMessage;
+
+  const LogoutFailure(this.errMessage);
+}
+
+class LogoutLoading extends UserState {}

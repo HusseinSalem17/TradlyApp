@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
-
 import '../../../core/utils/colors.dart';
-import '../../auth_feature/presentation/manager/user_cubit/user_cubit.dart';
+import '../../auth_feature/presentation/manager/auth_cubit/auth_cubit.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
@@ -104,7 +103,7 @@ class ProfileMenu extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  BlocProvider.of<UserCubit>(context).logout();
+                  BlocProvider.of<AuthCubit>(context).logout(context);
                 },
                 child: const Text(
                   'Logout',
