@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/widgets/custom_app_bar.dart';
 import 'package:tradly_app/features/home_feature/presentation/views/home_screen.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_item.dart';
+import 'package:tradly_app/features/products/presentation/view/product_detailes_feature/presentation/views/widgets/product_card.dart';
 
 class WishList extends StatelessWidget {
   const WishList({super.key});

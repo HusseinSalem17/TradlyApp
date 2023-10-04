@@ -5,7 +5,7 @@ import 'package:tradly_app/core/models/product_model.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
 import 'package:tradly_app/core/widgets/custom_botton.dart';
 
-import '../../../../core/utils/colors.dart';
+import '../../../../../../../core/utils/colors.dart';
 import 'widgets/product_icon.dart';
 
 class ProductDetailsScreen extends StatelessWidget {

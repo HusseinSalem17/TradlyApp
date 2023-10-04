@@ -3,13 +3,11 @@ import 'package:tradly_app/core/models/product_model.dart';
 import 'package:tradly_app/features/auth_feature/data/models/auth/user.dart';
 import 'package:tradly_app/features/auth_feature/presentation/views/verify_screen.dart';
 import 'package:tradly_app/features/onboarding_screen/presentation/views/onBoardviews.dart';
-import 'package:tradly_app/features/product_detailes_feature/presentation/views/product_detail_screen.dart';
+import 'package:tradly_app/features/products/presentation/view/product_detailes_feature/presentation/views/product_detail_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/add_product_screen.dart';
 import 'package:tradly_app/features/store_feature/presentation/views/created_store_screen.dart';
-
 import 'package:tradly_app/features/store_feature/presentation/views/create_store_screen.dart';
 import 'package:tradly_app/features/wish_list/view/wishList.dart';
-
 import 'features/auth_feature/presentation/views/login_screen.dart';
 import 'features/auth_feature/presentation/views/signup_screen.dart';
 import 'features/home_feature/presentation/views/home_screen.dart';
@@ -24,7 +22,7 @@ Route<dynamic> generateRoute(RouteSettings settings, BuildContext context) {
 
 //----- Main Routing -----
     case '/':
-      return splashRoute();
+      return homeRoute();
 
 //----- Auth Routing -----
     case SignUpScreen.routeName:

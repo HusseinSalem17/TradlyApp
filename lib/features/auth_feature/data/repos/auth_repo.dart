@@ -19,7 +19,7 @@ abstract class AuthRepo {
     required RequestVerify data,
   });
 
-  Future<Either<Failure,Map<String,dynamic>>> logout({
+  Future<Either<Failure, Map<String, dynamic>>> logout({
     required String uuid,
     required String authKey,
   });

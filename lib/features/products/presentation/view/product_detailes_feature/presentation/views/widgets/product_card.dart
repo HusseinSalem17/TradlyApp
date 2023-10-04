@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradly_app/core/models/product_model.dart';
-import 'package:tradly_app/features/product_detailes_feature/presentation/views/product_detail_screen.dart';
-import '../../../../../core/utils/colors.dart';
+import 'package:tradly_app/core/utils/colors.dart';
+import 'package:tradly_app/features/products/presentation/view/product_detailes_feature/presentation/views/product_detail_screen.dart';
 
 class ProductListItem extends StatelessWidget {
   const ProductListItem({super.key, required this.model});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tradly_app/core/models/product_model.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
-import 'package:tradly_app/features/home_feature/presentation/views/widgets/product_list_item.dart';
-import '../../../../../core/models/product_model.dart';
-import '../../../../../core/widgets/custom_botton.dart';
+import 'package:tradly_app/core/widgets/custom_botton.dart';
+import 'package:tradly_app/features/products/presentation/view/product_detailes_feature/presentation/views/widgets/product_card.dart';
 
 class ProductListView extends StatelessWidget {
   const ProductListView({

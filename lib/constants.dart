@@ -8,4 +8,3 @@ const kResponseLoginBoxForAuth = 'response_login_box_for_auth';
 const kLoginBox = 'response_login_box_to_get_user';
 const kOfBoxAuth = 'user';
 const kOfBoxLogin = 'userForLogin';
-
