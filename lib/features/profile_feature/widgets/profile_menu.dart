@@ -3,11 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradly_app/core/utils/text_styles.dart';
 import '../../../core/utils/colors.dart';
 import '../../auth_feature/presentation/manager/auth_cubit/auth_cubit.dart';
+import '../../auth_feature/presentation/views/login_screen.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -104,6 +106,11 @@ class ProfileMenu extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   BlocProvider.of<AuthCubit>(context).logout(context);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    LoginScreen.routeName,
+                    (route) => false,
+                  );
                 },
                 child: const Text(
                   'Logout',

@@ -9,6 +9,8 @@ import 'package:tradly_app/features/home_feature/presentation/manager/home_cubit
 import 'package:tradly_app/routes.dart';
 import 'features/auth_feature/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'features/auth_feature/presentation/manager/user_hive_cubit/user_cubit.dart';
+import 'features/store_feature/data/repos/store_repo_impl.dart';
+import 'features/store_feature/presentation/manager/create_store_cubit/create_store_cubit.dart';
 
 void main() async {
   setupServiceLocator();
@@ -37,6 +39,9 @@ class TradlyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => HomeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => CreateStoreCubit(getIt.get<StoreRepoImpl>()),
         ),
       ],
       child: MaterialApp(

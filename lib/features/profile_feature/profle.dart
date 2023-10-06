@@ -17,72 +17,59 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AssetsColors.backgroundGroundColor,
-        appBar: CustomAppBarWithActions(
-          title: 'Profile',
-          onTapCartIcon: () {
-            print('onTapCartIcon');
-          },
-          onTapFavoriteIcon: () {
-            print('onTapFavoriteIcon');
-          },
-        ),
-        body: BlocListener<AuthCubit, AuthState>(
-          listener: (context, state) {
-            if (state is AuthSuccess) {
-              Navigator.pushNamedAndRemoveUntil(
-                context,
-                LoginScreen.routeName,
-                (route) => false,
-              );
-            } else if (state is AuthFailure) {
-              showToast(errorMessage: state.errMessage);
-            }
-          },
-          child: Stack(
-            children: [
-              Container(
-                color: AssetsColors.kSecondaryColor,
-                height: MediaQuery.of(context).size.height / 3,
-                child: Column(
+      backgroundColor: AssetsColors.backgroundGroundColor,
+      appBar: CustomAppBarWithActions(
+        title: 'Profile',
+        onTapCartIcon: () {
+          print('onTapCartIcon');
+        },
+        onTapFavoriteIcon: () {
+          print('onTapFavoriteIcon');
+        },
+      ),
+      body: Stack(
+        children: [
+          Container(
+            color: AssetsColors.kSecondaryColor,
+            height: MediaQuery.of(context).size.height / 3,
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
                   children: [
-                    const SizedBox(
-                      height: 30,
+                    const Spacer(flex: 1),
+                    SvgPicture.asset(
+                      'assets/images/store_logo.svg',
                     ),
-                    Row(
+                    const Spacer(flex: 1),
+                    const Column(
                       children: [
-                        const Spacer(flex: 1),
-                        SvgPicture.asset(
-                          'assets/images/store_logo.svg',
-                        ),
-                        const Spacer(flex: 1),
-                        const Column(
-                          children: [
-                            Text('Tradly team',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400)),
-                            Text('+19998887776\ninfo@tradly.com',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w300)),
-                          ],
-                        ),
-                        const Spacer(flex: 10),
+                        Text('Tradly team',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400)),
+                        Text('+19998887776\ninfo@tradly.com',
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300)),
                       ],
                     ),
+                    const Spacer(flex: 10),
                   ],
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 140),
-                child:
-                    Align(alignment: Alignment.topCenter, child: ProfileMenu()),
-              )
-            ],
+              ],
+            ),
           ),
-        ));
+          const Padding(
+            padding: EdgeInsets.only(top: 140),
+            child: Align(alignment: Alignment.topCenter, child: ProfileMenu()),
+          )
+        ],
+      ),
+    );
   }
 }

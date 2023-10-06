@@ -1,11 +1,11 @@
 class Location {
-  String? city; //city
+  String? city;
   String? state;
-  String? country; //country
+  String? country;
   String? locality;
-  String? postcode; //courier name
+  String? postcode;
   String? countryCode;
-  String? formattedAddress; //address
+  String? formattedAddress;
 
   Location({
     this.city,
@@ -28,12 +28,12 @@ class Location {
       );
 
   Map<String, dynamic> toJson() => {
-        'city': city ?? '',
-        'state': state ?? '',
-        'country': country ?? '',
-        'locality': locality ?? '',
-        'postcode': postcode ?? '',
-        'country_code': countryCode ?? '',
-        'formatted_address': formattedAddress ?? '',
+        'city': city,
+        'state': state,
+        'country': country,
+        'locality': locality,
+        'postcode': postcode,
+        'country_code': countryCode,
+        'formatted_address': formattedAddress,
       };
 }

@@ -37,13 +37,15 @@ class ServerFailure extends Failure {
             'Opps There was an Error, Please try again ${dioException.response!.data}');
     }
   }
+
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     // add the case of the user is registered before (the status code of registered user is 409)
     if (statusCode == 400 ||
         statusCode == 401 ||
         statusCode == 403 ||
         statusCode == 409 ||
-        statusCode == 412) {
+        statusCode == 412 ||
+        statusCode == 422) {
       return ServerFailure(response['error']['message']);
     } else if (statusCode == 404) {
       //not found

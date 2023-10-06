@@ -14,6 +14,6 @@ class CreateStoreModel {
   }
 
   Map<String, dynamic> toJson() => {
-    'account': account?.toJson(),
-  };
+        'account': account?.toJson(),
+      };
 }

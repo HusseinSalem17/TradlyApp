@@ -7,9 +7,11 @@ import '../../../constants.dart';
 import '../../../features/auth_feature/data/models/response/response_login/data.dart';
 import '../../../features/auth_feature/data/models/response/response_login/key.dart';
 import '../../../features/auth_feature/data/models/response/response_login/response_login.dart';
+import '../../../features/store_feature/data/repos/store_repo_impl.dart';
 import 'api_service.dart';
 
 final getIt = GetIt.instance;
+
 Future<void> setupServiceLocator() async {
   await Hive.initFlutter(); // Initialize Hive
   Hive.registerAdapter<ResponseLogin>(ResponseLoginAdapter());
@@ -28,6 +30,11 @@ Future<void> setupServiceLocator() async {
   getIt.registerSingleton<AuthRepoImpl>(
     AuthRepoImpl(
       //get() => return the singelton that i made
+      getIt.get<ApiService>(),
+    ),
+  );
+  getIt.registerSingleton<StoreRepoImpl>(
+    StoreRepoImpl(
       getIt.get<ApiService>(),
     ),
   );

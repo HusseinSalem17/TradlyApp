@@ -6,7 +6,7 @@ abstract class CreateStoreState {}
 class CreateStoreInitial extends CreateStoreState {}
 
 class CreateStoreSuccess extends CreateStoreState {
-  final CreateStoreModel response;
+  final ResponseCreateStoreAccount response;
 
   CreateStoreSuccess(this.response);
 }

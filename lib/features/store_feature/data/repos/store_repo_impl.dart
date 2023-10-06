@@ -1,11 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:tradly_app/core/errors/failures.dart';
-import 'package:tradly_app/features/store_feature/data/models/create_store_model/create_store_model.dart';
+
+import 'package:tradly_app/features/store_feature/data/models/response/response_create_store_account/response_create_store_account.dart';
 import 'package:tradly_app/features/store_feature/data/repos/store_repo.dart';
 
 import '../../../../constants.dart';
 import '../../../../core/utils/functions/api_service.dart';
+import '../models/create_store_model/create_store_models.dart';
 
 class StoreRepoImpl extends StoreRepo {
   final ApiService apiService;
@@ -13,17 +15,19 @@ class StoreRepoImpl extends StoreRepo {
   StoreRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, CreateStoreModel>> createStore({
+  Future<Either<Failure, ResponseCreateStoreAccount>> createStore({
     required CreateStoreModel data,
+    required String authKey,
   }) async {
     try {
-      var response = CreateStoreModel.fromJson(
+      var response = ResponseCreateStoreAccount.fromJson(
         await apiService.post(
           endPoint: 'v1/accounts',
           data: data.toJson(),
           headers: {
             "Authorization": publishable_key,
             "Content-Type": "application/json",
+            "X-Auth-Key": authKey
           },
         ),
       );

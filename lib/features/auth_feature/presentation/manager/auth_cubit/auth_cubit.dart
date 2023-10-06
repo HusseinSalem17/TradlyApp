@@ -59,20 +59,20 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> logout(BuildContext context) async {
     emit(AuthLoading());
     var usersBox = Hive.box<ResponseLogin>(kResponseLoginBoxForAuth);
-    ResponseLogin user =
-        BlocProvider.of<UserHiveCubit>(context).getUserWithAuth()!;
-    var result = await authRepo.logout(
-      authKey: user.data!.user!.key!.authKey!,
-      uuid: user.data!.user!.id!,
-    );
+    // ResponseLogin user =
+    //     BlocProvider.of<UserHiveCubit>(context).getUserWithAuth()!;
+    // var result = await authRepo.logout(
+    //   authKey: user.data!.user!.key!.authKey!,
+    //   uuid: user.data!.user!.id!,
+    // );
     await usersBox.delete(kOfBoxAuth);
-    result.fold(
-      (failure) {
-        emit(AuthFailure(failure.errMessage));
-      },
-      (response) {
-        emit(AuthSuccess(response));
-      },
-    );
+    // result.fold(
+    //   (failure) {
+    //     emit(AuthFailure(failure.errMessage));
+    //   },
+    //   (response) {
+    //     emit(AuthSuccess(response));
+    //   },
+    // );
   }
 }
